@@ -1,0 +1,121 @@
+/*
+ * #b92525 Incognito rood
+ *
+ * Menu verplaatst naar navigation.css
+ *
+ * */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #b92525;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #eee;
+}
+
+a {
+    color: #b92525;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #b92525;
+    color: #eee;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.scrolling {
+    /* background: #eee; */
+    /* color: #333; */
+    /* border: none; */
+}
+
+#footer {
+    background: #222;
+    color: #777;
+    text-align: right;
+    margin: 10px 10px 0;
+    padding: 10px 10px 0;
+}
+
+#footer a {
+    color: #777;
+}
+
+#footer .block {
+    margin: 0 auto;
+}
+
+h2 {
+    color: #eee;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #eee;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#nieuws {color: #333}
+#nieuws h3 {color: #b92525}
+
+#nieuws ul {
+    list-style: none;
+    line-height: 26px;
+}
+
+.admin-menu-icon {
+    max-width: 16px;
+    max-height: 16px;
+}
+
+#page {
+    background-color: #b92525;
+    width: 98%;
+    margin: 10px auto;
+}
+
+#page h2 {
+    color: #222;
+}
+
+section.content {
+    background: #b92525;
+    background: #eee;
+    color: #222;
+    padding: 10px;
+    height: auto;
+}
+
+#content {
+    margin-top: 80px;
+}
+
+article p.submitted {
+    font-size: 80%;
+    text-align: right;
+    color: #aaa;
+}
+
+input {
+    padding: 3px 7px;
+    margin: 0 5px;
+}
