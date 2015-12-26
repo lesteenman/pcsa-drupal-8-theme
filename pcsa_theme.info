@@ -86,13 +86,12 @@ scripts[] = js/pcsa.js
 ; And you'll use this variable in maintenance-page.tpl.php:
 ;   <?php print $header_top; ?>
 
-regions[header]         = Header
-regions[navigation]     = Navigation bar
-regions[highlighted]    = Highlighted
-regions[help]           = Help
+regions[desktop_menu_anonymous] = Anonymous Desktop Menu
+regions[desktop_menu_primary] = Primary Desktop Menu
+regions[desktop_menu_secondary] = Secondary Desktop Menu
+regions[mobile_menu]    = Mobile Menu
 regions[content]        = Content
-regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
+regions[pre_comment]        = Pre-Comment
 regions[footer]         = Footer
 regions[bottom]         = Page bottom
 regions[frontpage_news] = Frontpage News

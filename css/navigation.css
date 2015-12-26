@@ -3,6 +3,14 @@
  * 1px - 500px: Header with menu button
  * 500px - 800px: Menu buttons, no title
  * 800px+: Menu buttons + Title
+ *
+ * Navigation heights:
+ * <=500 px:
+ *     logged in: 60px
+ *     not logged in: 60px
+ * >500px:
+ *     logged in: 100px
+ *     not logged in: 80px
  */
 
 nav#navigation #navbar {
@@ -10,6 +18,7 @@ nav#navigation #navbar {
     top: 0;
     left: 0;
     right: 0;
+    height: 100%;
 
     background: #eee;
     z-index: 250;
@@ -42,24 +51,38 @@ nav#navigation.frontpage {
     color: #222;
 }
 
-@media all and (min-width 1px) {
-    div.menu-button {
-        width: 36px;
-        height: 36px;
-        margin: 2px;
-        background-color: black;
-    }
+div.menu-button {
+    width: 36px;
+    height: 36px;
+    margin: 2px;
+    background-color: black;
 }
 
-@media all and (max-width: 800px) {
+nav li a {
+    height: 100%;
+    display: block;
+}
+
+@media all and (max-width: 700px) {
     nav h1 {
         display: none;
     }
 }
 
 @media all and (min-width: 501px) {
-    nav#navigation #navbar {
+    nav#navigation {
         height: 80px;
+    }
+
+    nav#navigation.authenticated {
+        height: 110px;
+    }
+
+    nav#navigation #desktop-menu {
+        display: inline;
+    }
+
+    nav#navigation #navbar {
         line-height: 80px;
     }
 
@@ -74,11 +97,14 @@ nav#navigation.frontpage {
         display: none;
     }
 
-    ul.menu {
+    nav#navigation #primary-menu, nav#navigation #anonymous-menu{
         position: relative;
         z-index: 250;
         display: block;
         float: right;
+    }
+
+    #primary-menu ul.menu, #anonymous-menu ul.menu {
         line-height: 80px;
         list-style: none;
         font-size: 14px;
@@ -87,7 +113,31 @@ nav#navigation.frontpage {
         margin: 0 10px;
     }
 
-    nav  li {
+    nav#navigation #secondary-menu {
+        position: absolute;
+        top: 80px;
+        background-color: #bbb;
+        z-index: 250;
+        display: block;
+        width: 100%;
+        height: 30px;
+    }
+
+    #secondary-menu ul.menu {
+        margin: 0 10px;
+        line-height: 30px;
+        list-style: none;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        float: right;
+    }
+
+    #secondary-menu ul.menu a {
+        color: #333;
+    }
+
+    nav li {
         float: left;
         margin-left: 10px;
     }
@@ -97,18 +147,24 @@ nav#navigation.frontpage {
     }
 
     nav li a {
-        padding: 2px;
         color: #333;
         text-decoration: none;
     }
 
     nav li a:hover {text-decoration: underline;color:#b92525}
+
+    #mobile-menu {
+        display: none;
+    }
 }
 
 @media all and (max-width: 500px) {
+    nav#navigation {
+        height: 60px;
+    }
+
     nav#navigation #navbar {
-        height: 40px;
-        line-height: 40px;
+        line-height: 60px;
         width: 100%;
         z-index: 50;
     }
@@ -117,7 +173,7 @@ nav#navigation.frontpage {
         display: block;
         font-size: 16px;
         margin: 0;
-        line-height: 40px;
+        line-height: 60px;
     }
 
     div#menu-button {
@@ -125,21 +181,25 @@ nav#navigation.frontpage {
         background-color: #eee;
         display: inline-block;
         position: absolute;
-        top: 6px;
-        right: 5px;
+        top: 14px;
+        right: 10px;
         width: 32px;
         height: 32px;
     }
 
-    ul.menu.collapsed {
+    #desktop-menu {
         display: none;
     }
 
-    ul.menu {
+    #mobile-menu ul.menu.collapsed {
+        display: none;
+    }
+
+    #mobile-menu ul.menu {
         z-index: 10;
         display: block;
         position: absolute;
-        bottom: 0px;
+        bottom: 100px; /* Make sure it's offscreen at load */
         left: 0px;
         right: 0px;
         height: auto;
@@ -158,7 +218,7 @@ nav#navigation.frontpage {
         box-shadow: 0px 10px 11px 2px rgba(0,0,0,0.75);
     }
 
-    ul.menu a {
+    #mobile-menu ul.menu a {
         line-height: 36px;
     }
 

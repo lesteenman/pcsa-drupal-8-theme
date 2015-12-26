@@ -8,14 +8,30 @@
 */
 ?>
 
-<nav id="navigation" class="container<?php echo drupal_is_front_page() ? ' frontpage' : ''; ?>">
+<nav id="navigation" class="container<?php echo drupal_is_front_page() ? ' frontpage' : ''; ?> <?php echo user_is_anonymous() ? 'anonymous' : 'authenticated' ?>">
     <div id="navbar">
         <a href="/">
             <h1><?php print $site_name; ?></h1>
         </a>
         <div id='menu-button'></div>
     </div>
-    <?php print render($page['header']); ?>
+    <div id='desktop-menu'>
+        <?php if (user_is_anonymous()) : ?>
+            <div id='anonymous-menu'>
+                <?php print render($page['desktop_menu_anonymous']); ?>
+            </div>
+        <?php else: ?>
+            <div id='primary-menu'>
+                <?php print render($page['desktop_menu_primary']); ?>
+            </div>
+            <div id='secondary-menu'>
+                <?php print render($page['desktop_menu_secondary']); ?>
+            </div>
+        <?php endif ?>
+    </div>
+    <div id='mobile-menu'>
+        <?php print render($page['mobile_menu']); ?>
+    </div>
 </nav>
 
 <?php if (drupal_is_front_page()) : ?>
@@ -38,6 +54,7 @@
 
     <?php if (drupal_is_front_page()) : ?>
 
+        <div class="content-wrapper">
         <?php if (user_is_anonymous()) :?>
             <section id="welkom">
                 <div class="container">
@@ -56,9 +73,10 @@
                 <?php print render($page['frontpage_updates']); ?>
             </section>
         <?php endif ?>
+        </div>
 
     <?php else : ?>
-    <div id="content" class="column" role="main">
+    <div class="content-wrapper" class="column" role="main">
         <?php print render($page['highlighted']); ?>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?>

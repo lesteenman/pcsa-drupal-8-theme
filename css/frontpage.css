@@ -86,12 +86,16 @@
 
 @media all and (min-width: 501px) {
     #intro-wrapper {
+        margin-top: 110px;
+    }
+
+    .not-logged-in #intro-wrapper {
         margin-top: 80px;
     }
 }
 
 @media all and (max-width: 500px) {
     #intro-wrapper {
-        margin-top: 40px;
+        margin-top: 60px;
     }
 }
