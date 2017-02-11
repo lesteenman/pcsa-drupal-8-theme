@@ -1,0 +1,12 @@
+name = Incognito
+description = Het eerste, oudste, rijckste en voornaamste thema.
+core = 7.x
+
+stylesheets[all][] = css/style.css
+
+scripts[] = js/scripts.js
+scripts[] = js/pcsa.js
+
+; Information added by Drupal.org packaging script on 2016-11-06
+version = "7.x-1.0"
+core = "7.x"
