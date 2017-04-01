@@ -107,7 +107,7 @@
     <?php endif ?>
 
     <div id="main-wrapper">
-      <section id="main" class="row clearfix">
+      <section class="row clearfix">
         <!-- <div class="container"> -->
 
           <!-- highlighted -->
