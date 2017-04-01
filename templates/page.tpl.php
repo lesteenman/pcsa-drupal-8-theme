@@ -73,11 +73,13 @@
  */
 ?>
 
-  <div id="page-wrapper"><div id="page">
+<div id="page-wrapper">
+  <div id="page">
   
     <?php if ($main_menu || $secondary_menu): ?>
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
+
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             </button>
@@ -104,45 +106,80 @@
         </section>
     <?php endif ?>
 
-    <div id="main-wrapper" class="container"><div id="main" class="row clearfix">
-	
-    <?php if ($breadcrumb): ?><div id="breadcrumb" class="col-md-12">
-	 <?php print $breadcrumb; ?>
-	</div><?php endif; ?>
-	
-	<?php if ($messages): ?><div class="col-md-12">
-    <?php print $messages; ?>
-	</div><?php endif; ?>
-	
-      <div id="content" class="column <?php echo $contentclass; ?>"><div class="section">
-        <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-        <a id="main-content"></a>
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-        <?php print render($title_suffix); ?>
-        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-        <?php print render($page['help']); ?>
-        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-        <?php print render($page['content']); ?>
-        <?php print $feed_icons; ?>
-      </div></div> <!-- /.section, /#content -->
+    <div id="main-wrapper">
+      <section id="main" class="row clearfix">
+        <!-- <div class="container"> -->
 
-      <?php if ($page['sidebar_first']): ?>
+          <!-- highlighted -->
+          <?php if ($page['highlighted']): ?>
+            <div id="highlighted"><?php print render($page['highlighted']); ?></div>
+          <?php endif; ?>
+
+          <!-- link? -->
+          <a id="main-content"></a>
+
+          <!-- title -->
+          <!--<?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+            <h1 class="title" id="page-title"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>-->
+
+          <!-- tabs -->
+          <?php if ($tabs): ?>
+            <div class="tabs"><?php print render($tabs); ?></div>
+          <?php endif; ?>
+
+          <?php print render($page['help']); ?>
+
+          <!-- action links -->
+          <?php if ($action_links): ?>
+            <ul class="action-links"><?php print render($action_links); ?></ul>
+          <?php endif; ?>
+
+          <!-- content -->
+          <?php print render($page['content']); ?>
+
+          <?php print $feed_icons; ?>
+        <!-- </div> -->
+      </section>
+    </div>
+
+	
+    <!--<?php if ($breadcrumb): ?><div id="breadcrumb" class="col-md-12">
+	 <?php print $breadcrumb; ?>
+	</div><?php endif; ?>-->
+	
+	<!--<?php if ($messages): ?><div class="col-md-12">
+    <?php print $messages; ?>
+	</div><?php endif; ?>-->
+	
+      <!-- <div id="content" class="column <?php echo $contentclass; ?>">
+        <div class="section">
+
+          
+        </div>
+      </div> -->
+
+      <!--<?php if ($page['sidebar_first']): ?>
         <div id="sidebar-first" class="column sidebar col-sm-3 <?php echo $firstsidebarpush; ?>"><div class="section">
           <?php print render($page['sidebar_first']); ?>
-        </div></div> <!-- /.section, /#sidebar-first -->
-      <?php endif; ?>
+        </div></div>
+      <?php endif; ?>-->
 
-      <?php if ($page['sidebar_second']): ?>
+      <!--<?php if ($page['sidebar_second']): ?>
         <div id="sidebar-second" class="column sidebar col-sm-3"><div class="section">
           <?php print render($page['sidebar_second']); ?>
-        </div></div> <!-- /.section, /#sidebar-second -->
-      <?php endif; ?>
+        </div></div>
+      <?php endif; ?>-->
 
-    </div></div> <!-- /#main, /#main-wrapper -->
+    <!-- </div></div> --> <!-- /#main, /#main-wrapper -->
 
-    <div id="footer" class="container"><div class="row section">
-      <?php print render($page['footer']); ?>
-    </div></div> <!-- /.section, /#footer -->
+    <section id="footer">
+      <div class="container">
+        <?php print render($page['footer']); ?>
+      </div>
+    </section> <!-- /.section, /#footer -->
 
-  </div></div> <!-- /#page, /#page-wrapper -->
+  </div> <!-- /#page -->
+</div> <!-- /#page-wrapper -->

@@ -17,6 +17,10 @@
 		width: 80%!important;
 	}
 
+	.node-teaser img {
+		display: none;
+	}
+
 }
 @media all and (max-width: 1000px) { /* screen size until 1000px */
 	.navbar .navbar-header a, .navbar .navbar-header a:hover, .navbar .navbar-header a:visited{
@@ -31,25 +35,30 @@
 		padding: 15px 5px!important;
 	}
 
-	#welkom p, #welkom button, #welkom .btn{
+	.welkom p, .welkom button, .welkom .btn{
 		display: none!important;
 	}
 
-	#welkom {
+	.welkom {
 		padding: 20px 0!important;
 	}
 
-    #newslist li {
+    .newslist .viewcontent {
 		margin-bottom: 0px!important;
 	}
 
-    #newslist .title {
+    /*.newslist .viewcontent .view-row .node h2 a {
     	font-size: 14px!important;
-    }
+    }*/
 
-    #newslist .abstract, #newslist .readmore {
-    	display: none!important;
-    }
+	/* node-teaser title */
+	.node-teaser h2 a {
+		font-size: 14px!important;
+	}
+
+	.node-teaser .links {
+		display: none!important;
+	}
 }
 
 @media all and (max-width: 800px) { /* screen size until 800px: mobile: nav = hamburger; */
@@ -356,7 +365,7 @@ h1 {
 	text-align: center;
 }
 
-#welkom, #rodeBalk {
+.welkom, #rodeBalk {
 	background: #b92525;
 	padding: 50px 0;
 	text-align: justify;
@@ -370,7 +379,7 @@ h1 {
 	padding: 20px 0!important;
 }
 
-#welkom .btn {
+.welkom .btn {
 	display: block;
 	width: 160px;
 	margin: 30px auto 0;
@@ -386,7 +395,7 @@ h1 {
 	font-weight: bold;
 }
 
-#welkom p a {
+.welkom p a {
 	color: #B4BEFF;
 	text-decoration: underline;
 }
@@ -403,37 +412,37 @@ h1 {
 	color: #000080;
 }
 
-#newslist {
+.newslist .viewcontent {
 	list-style: none;
 	padding: 0;
 	margin: 0 0 60px 0;
 }
 
-#newslist li {
+.newslist .viewcontent {
 	height: 100px;
 	margin-bottom: 30px;
 }
 
-#newslist .title a{
+.node-teaser h2 a {
 	display: block;
 	font-size: 16px;
 	font-weight: bold;
 	color: #b92525;
 }
 
-#newslist .author {
+.node-teaser .submitted {
 	display: block;
 	font-style: italic;
 	font-size: 12px;
 	color: #666;
 }
 
-#newslist .abstract {
+.node-teaser .content {
 	display: block;
 	height: 40px;
 }
 
-#newslist .readmore a{
+.node-teaser .links {
 	float: right;
 	margin: -10px 0 0 0;
 	font-size: 12px;
