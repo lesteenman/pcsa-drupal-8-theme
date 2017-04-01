@@ -125,11 +125,6 @@
           <?php endif; ?>
           <?php print render($title_suffix); ?>-->
 
-          <!-- tabs -->
-          <?php if ($tabs): ?>
-            <div class="tabs"><?php print render($tabs); ?></div>
-          <?php endif; ?>
-
           <?php print render($page['help']); ?>
 
           <!-- action links -->
@@ -139,6 +134,11 @@
 
           <!-- content -->
           <?php print render($page['content']); ?>
+
+          <!-- tabs -->
+          <?php if ($tabs): ?>
+            <div class="tabs"><?php print render($tabs); ?></div>
+          <?php endif; ?>
 
           <?php print $feed_icons; ?>
         <!-- </div> -->
