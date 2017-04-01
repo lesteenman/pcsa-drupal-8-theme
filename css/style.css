@@ -437,11 +437,6 @@ h1 {
 	color: #666;
 }
 
-.node-teaser .content {
-	display: block;
-	height: 40px;
-}
-
 .node-teaser .links {
 	float: right;
 	margin: -10px 0 0 0;
