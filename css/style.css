@@ -416,6 +416,11 @@ h1 {
 	margin-top: 80px;
 }
 
+.main-content h2 {
+	margin-top: 80px;
+	color: #000080;
+}
+
 .newslist .viewcontent {
 	list-style: none;
 	padding: 0;
