@@ -4,6 +4,7 @@ core = 7.x
 
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/navigation.css
+stylesheets[all][] = css/login.css
 
 scripts[] = js/scripts.js
 scripts[] = js/pcsa.js
