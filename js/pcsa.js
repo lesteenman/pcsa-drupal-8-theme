@@ -19,50 +19,54 @@ function initialize() {
 }
 
 
-$(document).ready(function(){    
+jQuery(document).ready(function(){    
 
 	// Scrollbar change
-	var scroll_start = $(this).scrollTop();
+	var scroll_start = jQuery(this).scrollTop();
 	var offset = 300;
 
-	//Change nav on scroll
-	$(document).scroll(function() { 
-		scroll_start = $(this).scrollTop();
-		console.log('Scrolled to:', scroll_start);
+	console.log('Current url:', Drupal.absoluteUrl());
 
-		if(scroll_start > offset) {
-			$(".navbar").addClass("navScroll");
-			//$(".secondary").addClass("navScroll");
-		} else {
-			$(".navbar").removeClass("navScroll");
-			//$(".secondary").removeClass("navScroll");
-		}
+	if (location.pathname == Drupal.settings.basePath) {
+		//Change nav on scroll
+		jQuery(document).scroll(function() { 
+			scroll_start = jQuery(this).scrollTop();
 
-	});
+			if(scroll_start > offset) {
+				jQuery(".navbar").addClass("navScroll");
+			} else {
+				jQuery(".navbar").removeClass("navScroll");
+			}
+
+		});
+	} else {
+		jQuery(".navbar").css("transition", "none");
+		jQuery(".navbar").addClass("navScroll");
+	}
 
 	//Hide/show login form
-	$("#loginlink").click(function(){
-		$('#login').toggle("fast");
-	});
+	// jQuery("#loginlink").click(function(){
+		// jQuery('#login').toggle("fast");
+	// });
 
-	$(".navbar-toggle").click(function(){
-		if(!$(this).hasClass("collapsed")){ //If we collapse the menu
-			if($('#login:visible').length == 1){ //And if login is open
-				$('#login').hide(0); //Hide login
+	jQuery(".navbar-toggle").click(function(){
+		if(!jQuery(this).hasClass("collapsed")){ //If we collapse the menu
+			if(jQuery('#login:visible').length == 1){ //And if login is open
+				jQuery('#login').hide(0); //Hide login
 			}
 		}
 	});
 
 	//Adjust height if needed
-	$( "#main .container" ).each(function() {
-		$this = $( this );
-		if($("#heerinfo").height() > $( this ).height()){
-			$this.height( $("#heerinfo").height() + 200);
+	jQuery( "#main .container" ).each(function() {
+		jQuerythis = jQuery( this );
+		if(jQuery("#heerinfo").height() > jQuery( this ).height()){
+			jQuerythis.height( jQuery("#heerinfo").height() + 200);
 		}
 	});
 
 	//Only load map if on Reizen page
-	if ($("#map-canvas").length > 0) {
+	if (jQuery("#map-canvas").length > 0) {
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
 
