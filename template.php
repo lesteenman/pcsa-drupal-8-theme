@@ -39,6 +39,39 @@ function pcsa_drupal_theme_preprocess_page(&$variables) {
 }
 
 /*
+ *  Remove labels and add HTML5 placeholder attribute to login form
+ */
+function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
+  if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block') ) )
+    $form['name']['#attributes']['placeholder'] = t( 'Gebruikersnaam' );
+    $form['pass']['#attributes']['placeholder'] = t( 'Wachtwoord' );
+    $form['name']['#title_display'] = "invisible";
+    $form['pass']['#title_display'] = "invisible";
+}
+
+/*
+ *  Remove login form descriptions
+ */
+function pcsa_drupal_theme_form_user_login_alter(&$form, &$form_state) {
+    $form['name']['#description'] = t('');
+    $form['pass']['#description'] = t('');
+}
+
+function pcsa_drupal_theme_theme() {
+  $items = array();
+  // create custom user-login.tpl.php
+  $items['user_login'] = array(
+  'render element' => 'form',
+  'path' => drupal_get_path('theme', 'pcsa_drupal_theme') . '/templates',
+  'template' => 'user-login',
+  'preprocess functions' => array(
+  'pcsa_drupal_theme_preprocess_user_login'
+  ),
+ );
+return $items;
+}
+
+/*
  * Without any preprocess hook
  */
 drupal_add_js('//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array(
