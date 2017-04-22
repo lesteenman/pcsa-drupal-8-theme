@@ -20,6 +20,8 @@ function pcsa_drupal_theme_preprocess_html(&$variables) {
  * Override or insert variables into the page template.
  */
 function pcsa_drupal_theme_preprocess_page(&$variables) {
+	drupal_add_js('https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAWBp751VogsaCKYseOoHTEuTcTqSRsJEg', 'external');
+
 	if($variables['page']['sidebar_first'] && $variables['page']['sidebar_second']){
 		$variables['contentclass'] = 'col-sm-6 col-sm-push-3';
 		$variables['firstsidebarpush'] = 'col-sm-pull-6';

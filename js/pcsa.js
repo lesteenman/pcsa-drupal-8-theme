@@ -4,7 +4,11 @@ function initialize() {
 	var map = new google.maps.Map(document.getElementById('map-canvas'), {
 		zoom: 1,
 		center: new google.maps.LatLng(52.225089, 6.887767),
-		mapTypeId: google.maps.MapTypeId.ROADMAP
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		draggable: false,
+		scrollwheel: false,
+		panControl: false,
+		disableDefaultUI: true,
 	}),
 
 		myMapsId = 'zTJMnapVaP1o.km0KB9QZ43hM';
@@ -66,7 +70,7 @@ jQuery(document).ready(function(){
 		}
 	});
 
-	//Only load map if on Reizen page
+	//Only load map if on '/reizen' page
 	if (jQuery("#map-canvas").length > 0) {
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
