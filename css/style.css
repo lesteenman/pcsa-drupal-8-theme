@@ -319,6 +319,14 @@ h1 {
 	margin-bottom: 30px;
 }
 
+.node-teaser {
+	margin: 20px 0;
+}
+
+.node-teaser h2 {
+	margin: initial;
+}
+
 .node-teaser h2 a {
 	display: block;
 	font-size: 16px;
