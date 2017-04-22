@@ -412,6 +412,10 @@ h1 {
 	/*color: #000080;*/
 }
 
+.main-content {
+	margin-top: 80px;
+}
+
 .newslist .viewcontent {
 	list-style: none;
 	padding: 0;
