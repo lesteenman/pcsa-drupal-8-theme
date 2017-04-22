@@ -1,0 +1,129 @@
+@media all and (max-width: 1200px) { /* screen size until 1200px */
+    .navbar .nav {
+		font-size: 11px!important;
+	}
+}
+
+@media all and (max-width: 1000px) { /* screen size until 1000px */
+	.navbar .navbar-header a, .navbar .navbar-header a:hover, .navbar .navbar-header a:visited{
+		font-size: 18px!important;
+	}
+}
+
+@media all and (max-width: 800px) { /* screen size until 800px: mobile: nav = hamburger; */
+	.navbar {
+		background: #eee!important;
+		height: 60px!important;
+		padding: 5px 0!important;
+		color: #444!important;
+	}
+	.navbar .navbar-header a, .navbar .navbar-header a:hover, .navbar .navbar-header a:visited{
+		font-size: 16px!important;
+		text-shadow: none!important;
+	}
+
+	.navbar-right {
+		max-height: 400px!important;
+	}
+
+	.navbar .nav li a, .navbar .nav li a:visited {
+		color: #444!important;
+	}
+
+	.navbar-collapse[aria-expanded=true]{
+		background: #eee;
+		border: none;
+		margin-top: 4px;
+	}
+
+	.navScroll .navbar-collapse[aria-expanded=true]{
+		background: #eee;
+		border-bottom: 2px solid #ddd;
+	}
+}
+
+/* adminimal admin menu */
+.slicknav_menu {
+	margin-top: 60px;
+}
+
+#admin-menu {
+	margin-top: 50px;
+	transition: margin-top 0.4s ease;
+}
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+	z-index: 900;
+}
+
+.navbar {
+	height: 80px;
+	background-color: transparent;
+	padding: 15px 0;
+	border-color: #aaa;
+
+	-webkit-transition: all 0.4s ease;
+   	transition: all 0.4s ease;
+}
+
+.navbar .navbar-header a, .navbar .navbar-header a:hover, .navbar .navbar-header a:visited{
+	font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+	color: #b92525;
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 1px 1px  #000;
+}
+
+.nav {
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.navbar .nav li a, .navbar .nav li a:visited {
+	color: #c4c4c4;
+}
+
+.navbar .nav li a:hover {
+	color: #b92525!important;
+	text-decoration: underline;
+}
+
+.navbar-right {
+	max-width: 680px;
+}
+
+.nav.secondary {
+	float: right;
+	margin-top: 15px;
+	border: #aaa 1px solid;
+	border-width: 0 1px 1px 1px;
+
+	-webkit-transition: all 0.4s ease;
+   	transition: all 0.4s ease;
+}
+
+.navScroll .nav.secondary {
+	margin-top: 4px;
+}
+
+.navScroll {
+	background-color: #eee;
+	height: 60px;
+	padding: 5px 0;
+	border-color: #ccc;
+}
+
+.navScroll .navbar-header a, .navScroll .navbar-header a:hover, .navScroll .navbar-header a:visited{
+	font-size: 18px;
+	text-shadow: none;
+}
+
+.navScroll .nav li a, .navScroll .nav li a:visited{
+	color: #444;
+}
+
+.navScroll .nav li a:hover{
+	color: #b92525!important;
+}
+

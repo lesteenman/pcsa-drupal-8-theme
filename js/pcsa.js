@@ -25,8 +25,6 @@ jQuery(document).ready(function(){
 	var scroll_start = jQuery(this).scrollTop();
 	var offset = 300;
 
-	console.log('Current url:', Drupal.absoluteUrl());
-
 	if (location.pathname == Drupal.settings.basePath) {
 		//Change nav on scroll
 		jQuery(document).scroll(function() { 
@@ -34,11 +32,14 @@ jQuery(document).ready(function(){
 
 			if(scroll_start > offset) {
 				jQuery(".navbar").addClass("navScroll");
+				jQuery("#admin-menu").css("margin-top", "50px");
 			} else {
 				jQuery(".navbar").removeClass("navScroll");
+				jQuery("#admin-menu").css("margin-top", "80px");
 			}
 
 		});
+		jQuery("#admin-menu").css("margin-top", "80px");
 	} else {
 		jQuery(".navbar").css("transition", "none");
 		jQuery(".navbar").addClass("navScroll");
