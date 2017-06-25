@@ -99,6 +99,10 @@
       <div class="admin-spacing"></div>
     <?php endif ?>
 
+    <?php if (!$is_admin && !drupal_is_front_page()): ?>
+      <div class="user-spacing"></div>
+    <?php endif ?>
+
 <div id="page-wrapper">
   <div id="page">
 
