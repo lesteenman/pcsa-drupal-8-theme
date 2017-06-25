@@ -46,6 +46,21 @@ function pcsa_drupal_theme_preprocess_node(&$variables) {
 		unset($variables['elements']['links']['comment']['#links']['comment-add']);
 		unset($variables['content']['links']['comment']['#links']['comment-add']);
 	}
+
+	// Add regions so we can display the presence views in a node.
+	if ($variables['type'] === 'activity' && !$variables['teaser']) {
+		// echo("<pre>"); var_dump($variables); echo("</pre>");
+		foreach (system_region_list($GLOBALS['theme']) as $region_key => $region_name) {
+			// Get the content for each region and add it to the $region variable
+			if ($blocks = block_get_blocks_by_region($region_key)) {
+				$variables['region'][$region_key] = $blocks;
+			}
+			else {
+				$variables['region'][$region_key] = array();
+			}
+		}
+	}
+
 }
 
 /*
@@ -75,7 +90,7 @@ function pcsa_drupal_theme_theme() {
   'path' => drupal_get_path('theme', 'pcsa_drupal_theme') . '/templates',
   'template' => 'user-login',
   'preprocess functions' => array(
-  'pcsa_drupal_theme_preprocess_user_login'
+    'pcsa_drupal_theme_preprocess_user_login'
   ),
  );
 return $items;

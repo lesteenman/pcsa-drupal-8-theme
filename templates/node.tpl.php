@@ -107,5 +107,11 @@
 
   <?php print render($content['links']); ?>
 
+  <?php if (!$teaser && $type === 'activity'): ?>
+	<div class="activity-attendants">
+      <?php print render($region['activity_presence']); ?>
+    </div>
+  <?php endif; ?>
+
   <?php print render($content['comments']); ?>
 </div>
