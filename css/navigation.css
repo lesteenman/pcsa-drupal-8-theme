@@ -2,11 +2,21 @@
     .navbar .nav {
 		font-size: 11px!important;
 	}
+
+	.navbar-relative {
+		position: relative;
+		margin-bottom: 0px;
+	}
 }
 
 @media all and (max-width: 1000px) { /* screen size until 1000px */
 	.navbar .navbar-header a, .navbar .navbar-header a:hover, .navbar .navbar-header a:visited{
 		font-size: 18px!important;
+	}
+
+	.navbar-relative {
+		position: fixed;
+		margin-bottom: 0px;
 	}
 }
 
@@ -39,6 +49,11 @@
 	.navScroll .navbar-collapse[aria-expanded=true]{
 		background: #eee;
 		border-bottom: 2px solid #ddd;
+	}
+
+	.navbar-relative {
+		position: fixed;
+		margin-bottom: 0px;
 	}
 }
 
@@ -129,10 +144,5 @@
 
 .navbar {
 	position: fixed;
-	margin-bottom: 0px;
-}
-
-.navbar-relative {
-	position: relative;
 	margin-bottom: 0px;
 }

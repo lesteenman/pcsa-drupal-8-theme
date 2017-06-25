@@ -1,3 +1,8 @@
+@media all and (min-width: 1200px) {
+	.admin-spacing {
+		height: 80px;
+	}
+}
 @media all and (max-width: 1200px) { /* screen size until 1200px */
     .container{
         max-width: 970px;
@@ -17,6 +22,9 @@
 		display: none;
 	}
 
+	.admin-spacing {
+		height: 120px;
+	}
 }
 @media all and (max-width: 1000px) { /* screen size until 1000px */
 	.nav {
@@ -50,6 +58,10 @@
 
 	.node-teaser .links {
 		display: none!important;
+	}
+
+	.admin-spacing {
+		height: 0px;
 	}
 }
 
@@ -95,6 +107,10 @@
 	#activities-new .activitytable tr td:nth-of-type(5), #activities-new .activitytable th:nth-of-type(5)
 	, #activities-new .activitytable col:nth-of-type(5){
 		display: none;
+	}
+
+	.admin-spacing {
+		height: 0px;
 	}
 }
 
@@ -316,8 +332,7 @@ h1 {
 }
 
 .main-content h2 {
-	margin-top: 40px;
-	font-size: 1.6em;
+	margin-top: 80px;
 	color: #000080;
 }
 
@@ -575,18 +590,15 @@ h1 {
 	padding: 0;
 }
 
-.activity-set-attendance > * {
-	padding-right: 1em;
+.activity-attendants h2 {
+	margin: 0;
+	font-size: 1.2em;
 }
 
 .noScroll {
   overflow: hidden;
   position: fixed;
   width: 100%;
-}
-
-.admin-spacing {
-	height: 60px;
 }
 
 .frontpage-title {
