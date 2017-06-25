@@ -312,7 +312,8 @@ h1 {
 }
 
 .main-content h2 {
-	margin-top: 80px;
+	margin-top: 40px;
+	font-size: 1.6em;
 	color: #000080;
 }
 
@@ -567,7 +568,6 @@ h1 {
 	padding: 0;
 }
 
-.activity-attendants h2 {
-	margin: 0;
-	font-size: 1.2em;
+.activity-set-attendance > * {
+	padding-right: 1em;
 }
