@@ -245,11 +245,11 @@ section {
 }
 
 h1 {
-	color: #eee;
+	/*color: #eee;*/
 	font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
 	font-size: 34px;
 	font-weight: bold;
-	text-align: center;
+	/*text-align: center;*/
 }
 
 .welkom, #rodeBalk {
@@ -289,7 +289,7 @@ h1 {
 
 .main {
 	background: #FAFAFA;
-	border-top: 3px solid #ddd;
+	/*border-top: 3px solid #ddd;#/
 	padding-bottom: 50px;
 }
 
@@ -299,8 +299,16 @@ h1 {
 	/*color: #000080;*/
 }
 
-.main-content {
+.main-wrapper {
+	background: #FAFAFA;
+}
+
+.admin-bar-spacing {
 	margin-top: 60px;
+}
+
+.user-spacing {
+	margin-top: 30px;
 }
 
 .main-content h2 {
@@ -527,3 +535,23 @@ h1 {
 #activiteit > span {
 	display: block;
 }
+
+#page-wrapper {
+	position: relative;
+	margin-top: 110px;
+}
+
+.main-title {
+	background: #FAFAFA;
+	border-top: 3px solid #ddd;
+}
+
+/*.title {
+	background: #FAFAFA;
+}*/
+
+/*h1 {
+	margin: 0;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}*/

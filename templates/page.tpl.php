@@ -73,9 +73,6 @@
  */
 ?>
 
-<div id="page-wrapper">
-  <div id="page">
-  
     <?php if ($main_menu || $secondary_menu): ?>
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -96,6 +93,9 @@
         </div>
       </nav>
     <?php endif; ?> <!-- $main_menu, $secondary_menu -->
+
+<div id="page-wrapper">
+  <div id="page">
 
     <?php if (drupal_is_front_page()): ?>
         <section id="header">
@@ -121,7 +121,11 @@
           <!-- title -->
           <?php print render($title_prefix); ?>
           <?php if ($title): ?>
-            <h1 class="title" id="page-title"><?php print $title; ?></h1>
+            <div class="main-title">
+              <div class="container">
+                <h1 class="title" id="page-title"><?php print $title; ?></h1>
+              </div>
+            </div>
           <?php endif; ?>
           <?php print render($title_suffix); ?>
 
