@@ -105,14 +105,16 @@
     ?>
   </div>
 
-  <div class="activity-set-attendance">
-    <h2>Uw Aanwezigheid:</h2>
-	<?php print flag_create_link('presence_present', $node->nid);?>
-	<?php print flag_create_link('presence_not_present', $node->nid);?>
-  </div>
-  <?php if (!$teaser && $type === 'activity'): ?>
-	<div class="activity-attendants">
-      <?php print render($region['activity_presence']); ?>
+  <?php if ($type === 'activity'): ?>
+    <?php if (!$teaser): ?>
+	  <div class="activity-attendants">
+        <?php print render($region['activity_presence']); ?>
+      </div>
+    <?php endif; ?>
+    <div class="activity-set-attendance">
+      <?php if (!$teaser): ?><h2>Uw Aanwezigheid:</h2><?php endif; ?>
+	  <?php print flag_create_link('presence_present', $node->nid);?>
+	  <?php print flag_create_link('presence_not_present', $node->nid);?>
     </div>
   <?php endif; ?>
 
