@@ -40,6 +40,14 @@ function pcsa_drupal_theme_preprocess_page(&$variables) {
 	}
 }
 
+function pcsa_drupal_theme_preprocess_node(&$variables) {
+	// Remove 'add new comment' link from nodes.
+	if (in_array($variables['type'], ['activity', 'news'])) {
+		unset($variables['elements']['links']['comment']['#links']['comment-add']);
+		unset($variables['content']['links']['comment']['#links']['comment-add']);
+	}
+}
+
 /*
  *  Remove labels and add HTML5 placeholder attribute to login form
  */

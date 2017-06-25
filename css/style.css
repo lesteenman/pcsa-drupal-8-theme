@@ -527,3 +527,7 @@ h1 {
 #activiteit > span {
 	display: block;
 }
+
+.profile {
+	margin: 0 0 1em;
+}
