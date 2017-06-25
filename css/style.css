@@ -334,7 +334,7 @@ h1 {
 	color: #b92525;
 }
 
-.node-teaser .submitted {
+.node-teaser .submitted, .node .submitted {
 	display: block;
 	font-style: italic;
 	font-size: 12px;
