@@ -108,6 +108,10 @@ body {
 	background: #111;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.8;
+	overflow: hidden;
+	/*max-height:100%;
+	position: fixed;
+	width:100%;*/
 }
 
 .secondaryNew li{
@@ -538,7 +542,10 @@ h1 {
 
 #page-wrapper {
 	position: relative;
-	margin-top: 110px;
+	width: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+	max-height:100%;
 }
 
 .main-title {
@@ -570,4 +577,22 @@ h1 {
 .activity-attendants h2 {
 	margin: 0;
 	font-size: 1.2em;
+}
+
+.noScroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.admin-spacing {
+	height: 60px;
+}
+
+.frontpage-title {
+	color: #eee;
+    font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
 }

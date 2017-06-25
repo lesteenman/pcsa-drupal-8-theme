@@ -94,6 +94,11 @@
       </nav>
     <?php endif; ?> <!-- $main_menu, $secondary_menu -->
 
+    <!-- push page down for admin bar -->
+    <?php if ($is_admin && !drupal_is_front_page()): ?>
+      <div class="admin-spacing"></div>
+    <?php endif ?>
+
 <div id="page-wrapper">
   <div id="page">
 
@@ -101,7 +106,7 @@
         <section id="header">
           <div class="container">
             <img src="<?php echo path_to_theme() ?>/images/wapen-nieuw.png" alt="Logo" class="img-responsive" />
-            <h1>Heerendispuut P.C.S.A. Incognito</h1>
+            <h1 class='frontpage-title'>Heerendispuut P.C.S.A. Incognito</h1>
           </div>
         </section>
     <?php endif ?>

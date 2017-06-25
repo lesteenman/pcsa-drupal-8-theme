@@ -22,17 +22,16 @@ function initialize() {
 	map.setOptions({styles: styles});
 }
 
-
 jQuery(document).ready(function(){    
-
+	console.log('start');
 	// Scrollbar change
-	var scroll_start = jQuery(this).scrollTop();
+	var scroll_start = jQuery('#page-wrapper').scrollTop();
 	var offset = 300;
-
-	if (location.pathname == Drupal.settings.basePath) {
+	
+	if (location.pathname == Drupal.settings.basePath || location.pathname == '/home') {
 		//Change nav on scroll
-		jQuery(document).scroll(function() { 
-			scroll_start = jQuery(this).scrollTop();
+		jQuery('#page-wrapper').scroll(function() { 
+			scroll_start = jQuery('#page-wrapper').scrollTop();
 
 			if(scroll_start > offset) {
 				jQuery(".navbar").addClass("navScroll");
@@ -41,12 +40,12 @@ jQuery(document).ready(function(){
 				jQuery(".navbar").removeClass("navScroll");
 				jQuery("#admin-menu").css("margin-top", "80px");
 			}
-
 		});
 		jQuery("#admin-menu").css("margin-top", "80px");
 	} else {
 		jQuery(".navbar").css("transition", "none");
 		jQuery(".navbar").addClass("navScroll");
+		jQuery('.navbar').addClass('navbar-relative');
 	}
 
 	//Hide/show login form

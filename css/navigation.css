@@ -128,5 +128,11 @@
 }
 
 .navbar {
+	position: fixed;
+	margin-bottom: 0px;
+}
+
+.navbar-relative {
+	position: relative;
 	margin-bottom: 0px;
 }
