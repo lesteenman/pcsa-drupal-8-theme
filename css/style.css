@@ -1,3 +1,9 @@
+@media all and (min-width: 1200px) {
+	.admin-spacing {
+		height: 90px;
+	}
+}
+
 @media all and (max-width: 1200px) { /* screen size until 1200px */
     .container{
         max-width: 970px;
@@ -76,6 +82,10 @@
 
 	h1 {font-size:30px!important;}
 
+	.container {
+		margin: 0 20px;
+	}
+
 	#header.content, #header.content .container {
 		height: 300px!important;
 	}
@@ -118,7 +128,7 @@ html, body {
 body { 
 	background: #111;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.8;
+    line-height: 1.4;
 	overflow: hidden;
 	/*max-height:100%;
 	position: fixed;
@@ -492,7 +502,7 @@ h1 {
 
 .main #map-canvas {
 	height: 600px;
-	margin: 50px 0 50px;
+	margin: 50px 0 0px;
 }
 
 #footer {
@@ -606,4 +616,8 @@ h1 {
 
 .user-spacing {
 	height: 60px;
+}
+
+.main-content {
+	padding-bottom: 50px;
 }
