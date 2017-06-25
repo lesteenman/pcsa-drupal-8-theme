@@ -9,6 +9,15 @@ stylesheets[all][] = css/login.css
 scripts[] = js/scripts.js
 scripts[] = js/pcsa.js
 
+regions[header] = Header 
+regions[highlighted] = Highlighted 
+regions[help] = Help 
+regions[content] = Content 
+regions[sidebar_first] = Left sidebar 
+regions[sidebar_second] = Right sidebar 
+regions[footer] = Footer 
+regions[activity_presence] = Activity Presence
+
 ; Information added by Drupal.org packaging script on 2016-11-06
 version = "7.x-1.0"
 core = "7.x"
