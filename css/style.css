@@ -128,7 +128,7 @@ html, body {
 body { 
 	background: #111;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.4;
+    line-height: 1.45;
 	overflow: hidden;
 	/*max-height:100%;
 	position: fixed;
@@ -280,7 +280,7 @@ h1 {
 	/*text-align: center;*/
 }
 
-.welkom, #rodeBalk {
+.welkom, #rodeBalk, .logged-in-frontpage-menu {
 	background: #b92525;
 	padding: 50px 0;
 	text-align: justify;
@@ -288,6 +288,22 @@ h1 {
 	color: #eee;
 
 	border-top: 8px solid #6B1313;
+}
+
+.logged-in-frontpage-menu .menu {
+	padding: 0;
+}
+
+.logged-in-frontpage-menu li.leaf {
+	float: left;
+	list-style: none;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+.logged-in-frontpage-menu li>a {
+	color: #ddd;
+	text-decoration: none;
 }
 
 #rodeBalk {
