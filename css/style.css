@@ -221,27 +221,27 @@ section {
   animation: change-bg 60s ease infinite;
 }
 
-	/* BG image animation */
-	/* Add other vendor prefixes if needed. */
-	@-webkit-keyframes change-bg{
-	  0%  { background-image: url(../images/promo/promo_2.jpg); }
-	  25% { background-image:  url(../images/promo/promo_2.jpg);  }
-	  33% { background-image:  url(../images/promo/promo_3.jpg);  }
-	  58% { background-image: url(../images/promo/promo_3.jpg); }
-	  66% { background-image: url(../images/promo/promo_4.jpg); }
-	  92% { background-image: url(../images/promo/promo_4.jpg); }
-	  100% { background-image: url(../images/promo/promo_2.jpg); }
-	}
+/* BG image animation */
+/* Add other vendor prefixes if needed. */
+@-webkit-keyframes change-bg{
+  0%  { background-image: url(../images/promo/promo_2.jpg); }
+  25% { background-image:  url(../images/promo/promo_2.jpg);  }
+  33% { background-image:  url(../images/promo/promo_3.jpg);  }
+  58% { background-image: url(../images/promo/promo_3.jpg); }
+  66% { background-image: url(../images/promo/promo_4.jpg); }
+  92% { background-image: url(../images/promo/promo_4.jpg); }
+  100% { background-image: url(../images/promo/promo_2.jpg); }
+}
 
-	@keyframes change-bg {
-	  0%  { background-image: url(../images/promo/promo_2.jpg); }
-	  25% { background-image:  url(../images/promo/promo_2.jpg);  }
-	  33% { background-image:  url(../images/promo/promo_3.jpg);  }
-	  58% { background-image: url(../images/promo/promo_3.jpg); }
-	  66% { background-image: url(../images/promo/promo_4.jpg); }
-	  92% { background-image: url(../images/promo/promo_4.jpg); }
-	  100% { background-image: url(../images/promo/promo_2.jpg); }
-	}
+@keyframes change-bg {
+  0%  { background-image: url(../images/promo/promo_2.jpg); }
+  25% { background-image:  url(../images/promo/promo_2.jpg);  }
+  33% { background-image:  url(../images/promo/promo_3.jpg);  }
+  58% { background-image: url(../images/promo/promo_3.jpg); }
+  66% { background-image: url(../images/promo/promo_4.jpg); }
+  92% { background-image: url(../images/promo/promo_4.jpg); }
+  100% { background-image: url(../images/promo/promo_2.jpg); }
+}
 
 #header .container {
     content: "";
@@ -249,9 +249,9 @@ section {
     display: inline;
     width: 100%; height:650px;
     max-width: 100%;
-    /*top:0;*/
     left:0;
     background:rgba(0,0,0,0.6);
+	margin: 0;
 }
 
 #header img {
