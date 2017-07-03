@@ -90,7 +90,7 @@
 		height: 300px!important;
 	}
 
-	#heerinfo {
+	.heer-info {
 		position: static!important;
 		margin: 20px 0!important;
 		width: 330px!important;
@@ -466,31 +466,64 @@ h1 {
 	margin: 10px 0 0;
 }
 
-.heerenlist {
+.heeren-list {
 	list-style: none;
 	padding: 0;
 	position: relative;
 	width: 200px;
 }
 
-#heerinfo {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 450px; 
-	width: 650px;
-	padding: 0 0 0 20px;
+/* Hide the heeren list on small screens when someone is selected */
+@media all and (max-width: 800px) {
+	.panels-flexible-region-heeren_side_by_side-center {
+	}
 
-	border-left: 1px solid #333;
+	.heeren-list-panel {
+		display: none;
+	}
+
+	/* none appended means no heer was selected */
+	.heeren-list-panel.heeren-list- {
+		display: block;
+		width: 100%;
+	}
+
+	.panels-flexible-region-heeren_side_by_side-center {
+		width: auto;
+	}
 }
 
-#heerinfo img {
-	margin: 0 0 0 -190px;
+
+
+/* Detail view for heeren */
+@media all and (max-width: 800px) {
+	.heer-info {
+		padding: 0;
+	}
+
+	.heer-info img {
+		margin: 0;
+	}
+
+	.heer-info h3 {
+		margin: 0 0 10px 0;
+		color: #000080;
+	}
 }
 
-#heerinfo h3 {
-	margin: -180px 0 10px 0;
-	color: #000080;
+@media all and (min-width: 801px) {
+	.heer-info {
+		padding: 130px 0 0 20px;
+		border-left: 1px solid #333;
+	}
+
+	.heer-info img {
+	}
+
+	.heer-info h3 {
+		margin: 0 0 10px 0;
+		color: #000080;
+	}
 }
 
 #praesidiumlist {
