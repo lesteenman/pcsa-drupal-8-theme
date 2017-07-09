@@ -3,6 +3,7 @@ description = Het eerste, oudste, rijckste en voornaamste thema.
 core = 7.x
 
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/praesidium.css
 stylesheets[all][] = css/navigation.css
 stylesheets[all][] = css/login.css
 

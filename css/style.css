@@ -158,6 +158,10 @@ body {
 	height: 100%;
 }
 
+.navbar .container {
+	margin: 0;
+}
+
 .container {
     position: relative;
 }

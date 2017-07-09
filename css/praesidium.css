@@ -1,0 +1,16 @@
+.praesidium-members > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	max-width: 600px;
+}
+
+@media all and (max-width: 560px) {
+	.praesidium-members > div {
+		flex-direction: column;
+	}
+}
+
+.view-id-praesidium_member {
+	text-align: center;
+}
