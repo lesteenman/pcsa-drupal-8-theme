@@ -1,0 +1,20 @@
+#page #main-wrapper #flickrgallery #flickrgallery-albums {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	align-content: stretch;
+}
+
+#page #main-wrapper #flickrgallery-albums .flickr-wrap {
+	flex: 1 1 auto;
+	width: 150px;
+}
+
+#page #main-wrapper #flickrgallery-albums .flickr-wrap a.flickrgallery {
+	display: block;
+	height: 100px;
+}
+
+#page #main-wrapper #flickrgallery-albums .flickr-wrap .flickr-total {
+	display: none;
+}
