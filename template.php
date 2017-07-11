@@ -1,7 +1,7 @@
 <?php
 
 function pcsa_drupal_theme_preprocess_html(&$variables) {
-	// Bootstrap
+	// Add bootstrap css to HTML
 	drupal_add_css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array('type' => 'external'));
 
 	// Mobile viewport
@@ -12,7 +12,6 @@ function pcsa_drupal_theme_preprocess_html(&$variables) {
 			'content' => 'width=device-width, initial-scale=1, maximum-scale=1',
 		),
 	);
-
 	drupal_add_html_head($viewport, 'viewport');
 }
 
