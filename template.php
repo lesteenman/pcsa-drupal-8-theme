@@ -4,7 +4,7 @@ function pcsa_drupal_theme_preprocess_html(&$variables) {
 	// Add bootstrap css to HTML
 	drupal_add_css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array('type' => 'external'));
 
-	// Add mobile viewport meta tag
+	// Mobile viewport
 	$viewport = array(
 		'#tag' => 'meta', 
 		'#attributes' => array(
