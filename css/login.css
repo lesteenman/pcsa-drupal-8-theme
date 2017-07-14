@@ -1,3 +1,7 @@
 #user-login {
     text-align: center;
 }
+
+#user-login input {
+	max-width: 100%;
+}
