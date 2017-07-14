@@ -67,14 +67,6 @@
 }
 
 @media all and (max-width: 800px) { /* screen size until 800px: mobile: nav = hamburger; */
-	#login{
-		top: 54px!important;
-		background: transparent!important;
-		border: none!important;
-		padding: 10px!important;
-		margin-top: 60px!important;
-	}
-	#login span {color: #333!important;}
 
 	#header, #header .container {
 		height: 560px!important;
@@ -168,48 +160,6 @@ body {
 
 section {
 	overflow:auto;
-}
-
-#login {
-	display: none;
-	padding: 10px 20px 15px 20px;
-	position: absolute;
-	right: 0;
-	top: 64px;
-	background: transparent;
-
-	border: 1px solid #ccc;
-	border-width: 0 1px 1px 1px;
-	border-radius: 0 0 10px 10px;
-}
-
-#login span {
-	color: #eee;
-	font-size: 10px;
-	font-style: italic;
-	margin-bottom: 3px;
-	float: right;
-}
-
-#login input {
-	float: right;
-}
-
-#login input[type=text], #login input[type=password]{
-	width: 240px;
-	margin-bottom: 5px;
-	padding: 3px;
-}
-#loginlink {cursor:pointer}
-
-.navScroll #login span {color: #333;}
-.navScroll #login {
-	top: 54px;
-	background: #eee;
-
-	border: 1px solid #ccc;
-	border-width: 0 1px 1px 1px;
-	border-radius: 0 0 10px 10px;
 }
 
 #header {
@@ -676,4 +626,8 @@ h1 {
 
 .main-content {
 	padding-bottom: 50px;
+}
+
+input {
+	max-width: 100%;
 }
