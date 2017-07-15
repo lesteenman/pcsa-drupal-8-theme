@@ -98,16 +98,7 @@
       </nav>
     <?php endif; ?> <!-- $main_menu, $secondary_menu -->
 
-    <!-- push page down for admin bar -->
-    <?php if ($is_admin && !drupal_is_front_page()): ?>
-      <div class="admin-spacing"></div>
-    <?php endif ?>
-
-    <?php if (!$is_admin && !drupal_is_front_page()): ?>
-      <div class="user-spacing"></div>
-    <?php endif ?>
-
-<div id="page-wrapper">
+<div id="page-wrapper" class="<?php if ($is_admin): ?>admin-user<?php endif ?>">
   <div id="page">
 
     <?php if (drupal_is_front_page()): ?>
@@ -119,7 +110,7 @@
         </section>
     <?php endif ?>
 
-	<div id="main-wrapper" class="<?php if ($is_admin): ?>admin-main<?php endif ?>">
+	<div id="main-wrapper">
       <section class="row clearfix">
         <!-- <div class="container"> -->
 
@@ -192,11 +183,11 @@
 
     <!-- </div></div> --> <!-- /#main, /#main-wrapper -->
 
-    <section id="footer">
-      <div class="container">
-        <?php print render($page['footer']); ?>
-      </div>
-    </section> <!-- /.section, /#footer -->
+	<section id="footer">
+	  <div class="container">
+		<?php print render($page['footer']); ?>
+	  </div>
+	</section> <!-- /.section, /#footer -->
 
   </div> <!-- /#page -->
 </div> <!-- /#page-wrapper -->

@@ -8,6 +8,7 @@ stylesheets[all][] = css/navigation.css
 stylesheets[all][] = css/login.css
 stylesheets[all][] = css/flickr.css
 stylesheets[all][] = css/heeren.css
+stylesheets[all][] = css/page.css
 
 scripts[] = js/scripts.js
 scripts[] = js/pcsa.js
