@@ -1,0 +1,66 @@
+.heeren-list {
+	list-style: none;
+	padding: 0;
+	position: relative;
+	width: 200px;
+}
+
+.heer-info .field-content {
+	display: inline-block;
+}
+
+/* Prevent showing two heer info views for admins */
+.admin-main .anonymous-heer-info {
+	display: none;
+}
+
+/* Hide the heeren list on small screens when someone is selected */
+@media all and (max-width: 800px) {
+	.heer-info {
+		position: static!important;
+		margin: 20px 0!important;
+		width: 330px!important;
+		padding: 0;
+	}
+
+	.panels-flexible-region-heeren_side_by_side-center {
+	}
+
+	.heeren-list-panel {
+		display: none;
+	}
+
+	/* none appended means no heer was selected */
+	.heeren-list-panel.heeren-list- {
+		display: block;
+		width: 100%;
+	}
+
+	.panels-flexible-region-heeren_side_by_side-center {
+		width: auto;
+	}
+
+	.heer-info img {
+		margin: 0;
+	}
+
+	.heer-info h3 {
+		margin: 0 0 10px 0;
+		color: #000080;
+	}
+}
+
+@media all and (min-width: 801px) {
+	.heer-info {
+		padding: 130px 0 0 20px;
+		border-left: 1px solid #333;
+	}
+
+	.heer-info img {
+	}
+
+	.heer-info h3 {
+		margin: 0 0 10px 0;
+		color: #000080;
+	}
+}

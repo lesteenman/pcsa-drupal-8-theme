@@ -119,7 +119,7 @@
         </section>
     <?php endif ?>
 
-    <div id="main-wrapper">
+	<div id="main-wrapper" class="<?php if ($is_admin): ?>admin-main<?php endif ?>">
       <section class="row clearfix">
         <!-- <div class="container"> -->
 

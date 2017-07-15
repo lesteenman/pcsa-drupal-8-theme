@@ -5,10 +5,10 @@ function initialize() {
 		zoom: 1,
 		center: new google.maps.LatLng(52.225089, 6.887767),
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		draggable: false,
-		scrollwheel: false,
-		panControl: false,
-		disableDefaultUI: true,
+		// draggable: false,
+		// scrollwheel: false,
+		// panControl: false,
+		// disableDefaultUI: true,
 	}),
 
 		myMapsId = 'zTJMnapVaP1o.km0KB9QZ43hM';

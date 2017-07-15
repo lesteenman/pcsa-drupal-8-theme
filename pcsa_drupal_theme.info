@@ -7,6 +7,7 @@ stylesheets[all][] = css/praesidium.css
 stylesheets[all][] = css/navigation.css
 stylesheets[all][] = css/login.css
 stylesheets[all][] = css/flickr.css
+stylesheets[all][] = css/heeren.css
 
 scripts[] = js/scripts.js
 scripts[] = js/pcsa.js
