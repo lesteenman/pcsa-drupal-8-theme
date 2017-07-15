@@ -1,7 +1,7 @@
 @media all and (max-width: 1200px) { /* screen size until 1200px */
-    .container{
-        max-width: 970px;
-    }
+	.container{
+		max-width: 970px;
+	}
 
 	#activities-old, #activities-new {
 		float: none!important;
@@ -34,13 +34,13 @@
 		padding: 20px 0!important;
 	}
 
-    .newslist .viewcontent {
+	.newslist .viewcontent {
 		margin-bottom: 0px!important;
 	}
 
-    /*.newslist .viewcontent .view-row .node h2 a {
-    	font-size: 14px!important;
-    }*/
+	/*.newslist .viewcontent .view-row .node h2 a {
+	font-size: 14px!important;
+	}*/
 
 	/* node-teaser title */
 	.node-teaser h2 a {
@@ -88,15 +88,15 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
 
 body { 
 	background: #111;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.45;
+	line-height: 1.45;
 	overflow: hidden;
 	/*max-height:100%;
 	position: fixed;
@@ -127,7 +127,7 @@ body {
 }
 
 .container {
-    position: relative;
+	position: relative;
 }
 
 section {
@@ -135,48 +135,49 @@ section {
 }
 
 #header {
+	margin-top: -60px;
 	height: 650px;
 	background-position: center center;
 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 
-  -webkit-animation: change-bg 60s ease infinite;
-  animation: change-bg 60s ease infinite;
+	-webkit-animation: change-bg 60s ease infinite;
+	animation: change-bg 60s ease infinite;
 }
 
 /* BG image animation */
 /* Add other vendor prefixes if needed. */
 @-webkit-keyframes change-bg{
-  0%  { background-image: url(../images/promo/promo_2.jpg); }
-  25% { background-image:  url(../images/promo/promo_2.jpg);  }
-  33% { background-image:  url(../images/promo/promo_3.jpg);  }
-  58% { background-image: url(../images/promo/promo_3.jpg); }
-  66% { background-image: url(../images/promo/promo_4.jpg); }
-  92% { background-image: url(../images/promo/promo_4.jpg); }
-  100% { background-image: url(../images/promo/promo_2.jpg); }
+	0%  { background-image: url(../images/promo/promo_2.jpg); }
+	25% { background-image:  url(../images/promo/promo_2.jpg);  }
+	33% { background-image:  url(../images/promo/promo_3.jpg);  }
+	58% { background-image: url(../images/promo/promo_3.jpg); }
+	66% { background-image: url(../images/promo/promo_4.jpg); }
+	92% { background-image: url(../images/promo/promo_4.jpg); }
+	100% { background-image: url(../images/promo/promo_2.jpg); }
 }
 
 @keyframes change-bg {
-  0%  { background-image: url(../images/promo/promo_2.jpg); }
-  25% { background-image:  url(../images/promo/promo_2.jpg);  }
-  33% { background-image:  url(../images/promo/promo_3.jpg);  }
-  58% { background-image: url(../images/promo/promo_3.jpg); }
-  66% { background-image: url(../images/promo/promo_4.jpg); }
-  92% { background-image: url(../images/promo/promo_4.jpg); }
-  100% { background-image: url(../images/promo/promo_2.jpg); }
+	0%  { background-image: url(../images/promo/promo_2.jpg); }
+	25% { background-image:  url(../images/promo/promo_2.jpg);  }
+	33% { background-image:  url(../images/promo/promo_3.jpg);  }
+	58% { background-image: url(../images/promo/promo_3.jpg); }
+	66% { background-image: url(../images/promo/promo_4.jpg); }
+	92% { background-image: url(../images/promo/promo_4.jpg); }
+	100% { background-image: url(../images/promo/promo_2.jpg); }
 }
 
 #header .container {
-    content: "";
-    position: absolute;
-    display: inline;
-    width: 100%; height:650px;
-    max-width: 100%;
-    left:0;
-    background:rgba(0,0,0,0.6);
+	content: "";
+	position: absolute;
+	display: inline;
+	width: 100%; height:650px;
+	max-width: 100%;
+	left:0;
+	background:rgba(0,0,0,0.6);
 	margin: 0;
 }
 
@@ -261,9 +262,9 @@ h1 {
 	background: #FAFAFA;
 	/*border-top: 3px solid #ddd;#/
 	padding-bottom: 50px;
-}
+	}
 
-.main h2 {
+	.main h2 {
 	margin: 60px 0 20px 0;
 	font-weight: bold;
 	/*color: #000080;*/
@@ -278,7 +279,7 @@ h1 {
 }
 
 /*.user-spacing {
-	margin-top: 30px;
+margin-top: 30px;
 }*/
 
 .main-content h2 {
@@ -306,7 +307,7 @@ h1 {
 }
 
 .node-teaser h2 a {
-	display: block;
+	display: inline-block;
 	font-size: 16px;
 	font-weight: bold;
 	color: #b92525;
@@ -455,8 +456,8 @@ h1 {
 
 .activitytable th, .activitytable td {
 	padding: 3px 6px;
-    text-align: left;
-    vertical-align: top;
+	text-align: left;
+	vertical-align: top;
 }
 
 #activiteit {
@@ -507,17 +508,17 @@ h1 {
 }
 
 .noScroll {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
 }
 
 .frontpage-title {
 	color: #eee;
-    font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
-    font-size: 34px;
-    font-weight: bold;
-    text-align: center;
+	font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+	font-size: 34px;
+	font-weight: bold;
+	text-align: center;
 }
 
 .main-content {
@@ -526,4 +527,5 @@ h1 {
 
 input {
 	max-width: 100%;
+	padding: 3px 5px;
 }
