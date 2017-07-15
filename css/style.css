@@ -453,6 +453,14 @@ h1 {
 	padding: 20px 0 20px;
 }
 
+.region-footer .container {
+	margin: 0;
+}
+
+.region.region-content {
+	overflow: hidden;
+}
+
 #activities-old {
 	float: left;
 }
