@@ -24,6 +24,7 @@ function initialize() {
 
 jQuery(document).ready(function(){    
 	console.log('start');
+
 	// Scrollbar change
 	var scroll_start = jQuery('#page-wrapper').scrollTop();
 	var offset = 300;

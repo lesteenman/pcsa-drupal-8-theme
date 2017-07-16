@@ -21,6 +21,10 @@ function pcsa_drupal_theme_preprocess_html(&$variables) {
 function pcsa_drupal_theme_preprocess_page(&$variables) {
 	drupal_add_js('https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAWBp751VogsaCKYseOoHTEuTcTqSRsJEg', 'external');
 
+	if ($variables['is_front']) {
+		drupal_add_js(drupal_get_path('theme', 'pcsa_drupal_theme') . '/js/header.js');
+	}
+
 	if($variables['page']['sidebar_first'] && $variables['page']['sidebar_second']){
 		$variables['contentclass'] = 'col-sm-6 col-sm-push-3';
 		$variables['firstsidebarpush'] = 'col-sm-pull-6';
