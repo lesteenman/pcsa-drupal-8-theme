@@ -10,7 +10,7 @@
 }
 
 /* Prevent showing two heer info views for admins */
-.admin-main .anonymous-heer-info {
+.admin-user .anonymous-heer-info {
 	display: none;
 }
 

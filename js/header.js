@@ -1,6 +1,9 @@
 var transition_time = 16000;
 var transition_duration = 2500;
 
+var theme_image_root = Drupal.settings.image_root;
+console.log('Image root:', theme_image_root, Drupal.settings);
+
 var urls = {
 	'small': [ // 640
 		"https://farm8.staticflickr.com/7441/8731624016_31cdcd479a_z_d.jpg",
@@ -9,13 +12,14 @@ var urls = {
 		"https://farm2.staticflickr.com/1263/1453503542_ccafba5687_z_d.jpg",
 		"https://farm8.staticflickr.com/7460/8731776008_720c223802_z_d.jpg",
 		"https://farm2.staticflickr.com/1149/1433774588_2d9dae328a_z_d.jpg",
+		// theme_image_root + "/end_of_summer.jpg",
 	],
 	'medium': [ // 1024
 		"https://farm8.staticflickr.com/7441/8731624016_31cdcd479a_b_d.jpg",
 		"https://farm4.staticflickr.com/3072/3107540308_abb51305e1_b_d.jpg",
 		"https://farm3.staticflickr.com/2446/4031332857_33e846d70f_b_d.jpg",
 		"https://farm2.staticflickr.com/1263/1453503542_ccafba5687_b_d.jpg",
-		"https://farm2.staticflickr.com/1149/1433774588_2d9dae328a_b_d.jpg",
+		// theme_image_root + "/end_of_summer.jpg",
 	],
 };
 
