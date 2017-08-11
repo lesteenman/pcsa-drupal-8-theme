@@ -71,11 +71,11 @@ HTML comment.
 		<?php if ($start || $end):?>
 			<i>
 			<?php if ($start):?>
-				<?php if (!$end):?>sinds <?php endif?><?=date('m-Y', strtotime($start))?><?php endif ?>
-			<?php if ($end):?>
-				tot <?=date('m-Y', strtotime($end))?>
+				Begonnen: <?=date('m-Y', strtotime($start))?><br>
 			<?php endif ?>
-			<br>
+			<?php if ($end):?>
+				Afgestudeerd: <?=date('m-Y', strtotime($end))?><br>
+			<?php endif ?>
 			</i>
 		<?php endif ?>
 	</div>
