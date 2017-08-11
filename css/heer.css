@@ -1,0 +1,12 @@
+.field-collection-label {
+	margin-top: 5px;
+}
+
+.field-comittees, .field-studies {
+	margin: 5px 0;
+}
+
+.field-comittees-comittee, .field-studies-study {
+	margin-left: 15px;
+	margin-bottom: 7px;
+}
