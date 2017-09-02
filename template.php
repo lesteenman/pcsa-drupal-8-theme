@@ -5,14 +5,22 @@ function pcsa_drupal_theme_preprocess_html(&$variables) {
 	drupal_add_css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array('type' => 'external'));
 
 	// Mobile viewport
-	$viewport = array(
+	$viewport = [
 		'#tag' => 'meta', 
-		'#attributes' => array(
+		'#attributes' => [
 			'name' => 'viewport', 
 			'content' => 'width=device-width, initial-scale=1, maximum-scale=1',
-		),
-	);
+		],
+	];
 	drupal_add_html_head($viewport, 'viewport');
+
+	drupal_add_html_head([
+		'#tag' => 'meta',
+		'#attributes' => [
+			'name' => 'theme-color',
+			'content' => '#b92525',
+		],
+	], 'theme-color');
 }
 
 /**
@@ -132,6 +140,11 @@ function pcsa_drupal_theme_pwa_manifest_alter(&$manifest) {
 		[
 			'src' => url($path . '/assets/icon-192.png'),
 			'sizes' => '192x192',
+			'type' => 'image/png',
+		],
+		[
+			'src' => url($path . '/assets/icon-512.png'),
+			'sizes' => '512x512',
 			'type' => 'image/png',
 		],
 	];

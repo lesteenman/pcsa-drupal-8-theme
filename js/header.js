@@ -10,7 +10,7 @@ var urls = {
 		"https://farm4.staticflickr.com/3072/3107540308_abb51305e1_z_d.jpg",
 		"https://farm3.staticflickr.com/2446/4031332857_33e846d70f_z_d.jpg",
 		"https://farm2.staticflickr.com/1263/1453503542_ccafba5687_z_d.jpg",
-		"https://farm8.staticflickr.com/7460/8731776008_720c223802_z_d.jpg",
+		// "https://farm8.staticflickr.com/7460/8731776008_720c223802_z_d.jpg",
 		"https://farm2.staticflickr.com/1149/1433774588_2d9dae328a_z_d.jpg",
 		// theme_image_root + "/end_of_summer.jpg",
 	],
