@@ -101,6 +101,42 @@ function pcsa_drupal_theme_theme() {
 	return $items;
 }
 
+function pcsa_drupal_theme_pwa_manifest_alter(&$manifest) {
+	$path = drupal_get_path('theme', 'pcsa_drupal_theme');
+	$manifest['icons'] = [
+		[
+			'src' => url($path . '/assets/icon-48.png'),
+			'sizes' => '48x48',
+			'type' => 'image/png',
+		],
+		[
+			'src' => url($path . '/assets/icon-72.png'),
+			'sizes' => '72x72',
+			'type' => 'image/png',
+		],
+		[
+			'src' => url($path . '/assets/icon-96.png'),
+			'sizes' => '96x96',
+			'type' => 'image/png',
+		],
+		[
+			'src' => url($path . '/assets/icon-144.png'),
+			'sizes' => '144x144',
+			'type' => 'image/png',
+		],
+		[
+			'src' => url($path . '/assets/icon-168.png'),
+			'sizes' => '168x168',
+			'type' => 'image/png',
+		],
+		[
+			'src' => url($path . '/assets/icon-192.png'),
+			'sizes' => '192x192',
+			'type' => 'image/png',
+		],
+	];
+}
+
 /*
  * Without any preprocess hook
  */
