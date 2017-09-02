@@ -1,22 +1,26 @@
-@media all and (max-width: 1200px) { /* screen size until 1200px */
-	.container{
-		max-width: 970px;
-	}
-
-	#activities-old, #activities-new {
-		float: none!important;
-		margin-bottom: 50px;
-
-	}
-
-	#activities-new .activitytable, #activities-old .activitytable {
-		width: 80%!important;
-	}
-
-	.node-teaser img {
-		display: none;
-	}
+#main-wrapper .container{
+	max-width: 970px;
 }
+
+#activities-old, #activities-new {
+	float: none!important;
+	margin-bottom: 50px;
+
+}
+
+#activities-new .activitytable, #activities-old .activitytable {
+	width: 80%!important;
+}
+
+.node-teaser img {
+	display: none;
+}
+
+.content > .container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 @media all and (max-width: 1000px) { /* screen size until 1000px */
 	.nav {
 		font-size: 11px!important;
@@ -24,10 +28,6 @@
 
 	.nav li a{
 		padding: 15px 5px!important;
-	}
-
-	.welkom p, .welkom button, .welkom .btn{
-		display: none!important;
 	}
 
 	.welkom {
@@ -198,7 +198,7 @@ h1 {
 	background: #b92525;
 	padding: 50px 0;
 	text-align: justify;
-	font-size: 18px;
+	font-size: initial;
 	color: #eee;
 
 	border-top: 8px solid #6B1313;
