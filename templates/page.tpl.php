@@ -106,7 +106,7 @@
 		  <div id="header-image-1" class='header-image'></div>
 		  <div id="header-image-2" class='header-image'></div>
           <div class="container">
-            <img src="<?php echo path_to_theme() ?>/images/wapen-nieuw.png" alt="Logo" class="img-responsive" />
+            <img src="/<?php echo path_to_theme() ?>/images/wapen-nieuw.png" alt="Logo" class="img-responsive" nopin="nopin"/>
             <h1 class='frontpage-title'>Heerendispuut P.C.S.A. Incognito</h1>
           </div>
         </section>
