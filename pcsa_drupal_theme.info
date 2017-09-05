@@ -23,6 +23,4 @@ regions[sidebar_second] = Right sidebar
 regions[footer] = Footer 
 regions[activity_presence] = Activity Presence
 
-; Information added by Drupal.org packaging script on 2016-11-06
-version = "7.x-1.0"
-core = "7.x"
+version = 1.0
