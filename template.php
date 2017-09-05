@@ -80,8 +80,10 @@ function pcsa_drupal_theme_preprocess_node(&$variables) {
  *  Remove labels and add HTML5 placeholder attribute to login form
  */
 function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
-	if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block') ) )
-		$form['name']['#attributes']['placeholder'] = t( 'Gebruikersnaam' );
+	if (in_array($form_id, ['user_login', 'user_login_block']))
+		$form['name']['#attributes']['placeholder'] = t('Gebruikersnaam of email');
+	else if ($form_id === 'user_pass')
+		$form['name']['#attributes']['placeholder'] = t('Gebruikersnaam of email');
 	$form['pass']['#attributes']['placeholder'] = t( 'Wachtwoord' );
 	$form['name']['#title_display'] = "invisible";
 	$form['pass']['#title_display'] = "invisible";
