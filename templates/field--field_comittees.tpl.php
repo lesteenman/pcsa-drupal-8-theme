@@ -53,7 +53,8 @@ After copying this file to your theme's folder and customizing it, remove this
 HTML comment.
 -->
 <?php if (count($items) > 0): ?>
-
+	<label>
+	Comissies:
 	<div class="field-comittees <?php print $classes; ?>"<?php print $attributes; ?>>
 	<?php foreach ($items as $item): ?>
 		<?php
@@ -82,5 +83,6 @@ HTML comment.
 		</div>
 	<?php endforeach; ?>
 	</div>
+	</label>
 
 <?php endif ?>

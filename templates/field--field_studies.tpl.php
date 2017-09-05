@@ -54,6 +54,8 @@ HTML comment.
 -->
 
 <?php if (count($items) > 0): ?>
+<label>
+Comissies:
 
 	<div class="field-studies <?php print $classes; ?>"<?php print $attributes; ?>>
 
@@ -84,6 +86,7 @@ HTML comment.
 		</div>
 	<?php endforeach; ?>
 	</div>
+</label>
 
 <?php endif ?>
 
