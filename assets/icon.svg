@@ -16,9 +16,9 @@
    id="svg8"
    inkscape:version="0.92.1 r15371"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="E:\Development\PCSA\Icon\icon-192.png"
-   inkscape:export-xdpi="36.860001"
-   inkscape:export-ydpi="36.860001">
+   inkscape:export-filename="E:\Development\PCSA\Icon\icon-96.png"
+   inkscape:export-xdpi="18.43"
+   inkscape:export-ydpi="18.43">
   <defs
      id="defs2">
     <clipPath
@@ -37,11 +37,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="88.059451"
-     inkscape:cy="144.82281"
+     inkscape:zoom="0.7"
+     inkscape:cx="-25.534799"
+     inkscape:cy="187.40445"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4497"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
@@ -67,14 +67,14 @@
      id="layer1"
      transform="translate(0,-164.70832)">
     <rect
-       style="fill:#e51f23;fill-opacity:1;stroke-width:0.26401818"
+       style="fill:#b92525;fill-opacity:1;stroke-width:0.26401818"
        id="rect4532"
        width="132.29167"
        height="132.29167"
        x="0"
        y="164.70831" />
     <g
-       transform="matrix(0.46679495,0,0,-0.46679495,-95.701313,459.65892)"
+       transform="matrix(0.4262022,0,0,-0.4262022,-81.626994,443.46612)"
        inkscape:label="maskerzonderstok"
        id="g4493">
       <g
@@ -103,21 +103,22 @@
           </g>
           <g
              transform="translate(273.0044,538.2134)"
-             id="g4511">
+             id="g4511"
+             style="fill:#b92525;fill-opacity:1">
             <path
                inkscape:connector-curvature="0"
                id="path4513"
-               style="fill:#e51f23;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:#b92525;fill-opacity:1;fill-rule:nonzero;stroke:none"
                d="m 0,0 c -2.503,0.682 -6.63,1.239 -8.083,-0.622 -1.543,-1.973 -0.341,-6.446 -0.041,-8.124 3.718,-20.94 20.074,-36.868 42.33,-41.549 8.362,-1.755 18.518,-0.749 16.657,10.087 -1.99,11.526 -14.546,22.104 -23.408,28.469 C 20.575,-6.793 8.362,-2.293 0,0" />
           </g>
           <g
              transform="translate(417.2983,539.5444)"
              id="g4515"
-             style="fill:#e51f23;fill-opacity:1">
+             style="fill:#b92525;fill-opacity:1">
             <path
                inkscape:connector-curvature="0"
                id="path4517"
-               style="fill:#e51f23;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:#b92525;fill-opacity:1;fill-rule:nonzero;stroke:none"
                d="m 0,0 c 2.503,0.711 6.618,1.293 8.094,-0.553 1.557,-1.963 0.393,-6.448 0.109,-8.122 -3.538,-20.971 -19.761,-37.043 -41.963,-41.908 -8.349,-1.836 -18.513,-0.912 -16.744,9.93 1.886,11.548 14.345,22.232 23.157,28.678 C -20.521,-6.977 -8.35,-2.374 0,0" />
           </g>
         </g>
