@@ -73,11 +73,6 @@ function pcsa_drupal_theme_preprocess_node(&$variables) {
 			}
 		}
 	}
-
-	/* if($vars['view_mode'] == 'teaser') { */
-	/* 	$vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser'; */
-	/* 	$vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser'; */
-	/* } */
 }
 
 /*
