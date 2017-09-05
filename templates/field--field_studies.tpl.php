@@ -52,34 +52,38 @@ See http://api.drupal.org/api/function/theme_field/7 for details.
 After copying this file to your theme's folder and customizing it, remove this
 HTML comment.
 -->
-<div class="field-studies <?php print $classes; ?>"<?php print $attributes; ?>>
-<?php dpm($items) ?>
-<?php foreach ($items as $item): ?>
-	<?php
-		$study = $item['entity']['field_collection_item'];
-		$key = array_keys($study)[0];
-		$study = $study[$key];
 
-		$entity = $study['#entity'];
-		$name = $entity->field_study_name['und'][0]['value'];
-		$start = $end = false;
-		if (property_exists($entity, 'field_study_start')) $start = $entity->field_study_start['und'][0]['value'];
-		if (property_exists($entity, 'field_study_end')) $end = $entity->field_study_end['und'][0]['value'];
-	?>
-	<div class='field-studies-study'>
-		<?=$name?><br>
-		<?php if ($start || $end):?>
-			<i>
-			<?php if ($start):?>
-				Begonnen: <?=date('m-Y', strtotime($start))?><br>
+<?php if (count($items) > 0): ?>
+
+	<div class="field-studies <?php print $classes; ?>"<?php print $attributes; ?>>
+
+	<?php foreach ($items as $item): ?>
+		<?php
+			$study = $item['entity']['field_collection_item'];
+			$key = array_keys($study)[0];
+			$study = $study[$key];
+
+			$entity = $study['#entity'];
+			$name = $entity->field_study_name['und'][0]['value'];
+			$start = $end = false;
+			if (property_exists($entity, 'field_study_start')) $start = $entity->field_study_start['und'][0]['value'];
+			if (property_exists($entity, 'field_study_end')) $end = $entity->field_study_end['und'][0]['value'];
+		?>
+		<div class='field-studies-study'>
+			<?=$name?><br>
+			<?php if ($start || $end):?>
+				<i>
+				<?php if ($start):?>
+					Begonnen: <?=date('m-Y', strtotime($start))?><br>
+				<?php endif ?>
+				<?php if ($end):?>
+					Afgestudeerd: <?=date('m-Y', strtotime($end))?><br>
+				<?php endif ?>
+				</i>
 			<?php endif ?>
-			<?php if ($end):?>
-				Afgestudeerd: <?=date('m-Y', strtotime($end))?><br>
-			<?php endif ?>
-			</i>
-		<?php endif ?>
+		</div>
+	<?php endforeach; ?>
 	</div>
-<?php endforeach; ?>
-</div>
 
+<?php endif ?>
 

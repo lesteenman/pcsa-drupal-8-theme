@@ -52,33 +52,35 @@ See http://api.drupal.org/api/function/theme_field/7 for details.
 After copying this file to your theme's folder and customizing it, remove this
 HTML comment.
 -->
-<div class="field-comittees <?php print $classes; ?>"<?php print $attributes; ?>>
-<?php foreach ($items as $item): ?>
-	<?php
-		$comittee = $item['entity']['field_collection_item'];
-		$key = array_keys($comittee)[0];
-		$comittee = $comittee[$key];
+<?php if (count($items) > 0): ?>
 
-		$entity = $comittee['#entity'];
-		$name = $entity->field_comittee_name['und'][0]['value'];
-		$function = $entity->field_comittee_function['und'][0]['value'];
-		$start = $entity->field_comittee_start['und'][0]['value'];
-		$end = $entity->field_comittee_end['und'][0]['value'];
-	?>
-	<div class='field-comittees-comittee'>
-		<?=$name?><?php if ($function):?> (<i><?=$function?></i>)<?php endif ?><br>
-		<?php if ($start || $end):?>
-			<i>
-			<?php if ($start):?>
-				<?php if (!$end):?>sinds <?php endif?><?=date('m-Y', strtotime($start))?><?php endif ?>
-			<?php if ($end):?>
-				tot <?=date('m-Y', strtotime($end))?>
+	<div class="field-comittees <?php print $classes; ?>"<?php print $attributes; ?>>
+	<?php foreach ($items as $item): ?>
+		<?php
+			$comittee = $item['entity']['field_collection_item'];
+			$key = array_keys($comittee)[0];
+			$comittee = $comittee[$key];
+
+			$entity = $comittee['#entity'];
+			$name = $entity->field_comittee_name['und'][0]['value'];
+			$function = $entity->field_comittee_function['und'][0]['value'];
+			$start = $entity->field_comittee_start['und'][0]['value'];
+			$end = $entity->field_comittee_end['und'][0]['value'];
+		?>
+		<div class='field-comittees-comittee'>
+			<?=$name?><?php if ($function):?> (<i><?=$function?></i>)<?php endif ?><br>
+			<?php if ($start || $end):?>
+				<i>
+				<?php if ($start):?>
+					<?php if (!$end):?>sinds <?php endif?><?=date('m-Y', strtotime($start))?><?php endif ?>
+				<?php if ($end):?>
+					tot <?=date('m-Y', strtotime($end))?>
+				<?php endif ?>
+				<br>
+				</i>
 			<?php endif ?>
-			<br>
-			</i>
-		<?php endif ?>
+		</div>
+	<?php endforeach; ?>
 	</div>
-<?php endforeach; ?>
-</div>
 
-
+<?php endif ?>
