@@ -110,6 +110,17 @@ function pcsa_drupal_theme_theme() {
 	return $items;
 }
 
+function pcsa_drupal_theme_views_pre_render(&$view) {
+	if ($view->name === 'new_content') {
+		if (user_access('view nodes')) {
+			$view->build_info['title'] = "Recent";
+		}
+		else {
+			$view->build_info['title'] = "Nieuws";
+		}
+	}
+}
+
 function pcsa_drupal_theme_pwa_manifest_alter(&$manifest) {
 	$path = drupal_get_path('theme', 'pcsa_drupal_theme');
 	$manifest['icons'] = [
