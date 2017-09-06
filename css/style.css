@@ -178,6 +178,8 @@ section {
 	-o-background-size: cover;
 	background-size: cover;
 
+  background-color: #6B1313;
+
 	transition: background-image ease;
 }
 
