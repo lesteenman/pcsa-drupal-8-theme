@@ -229,8 +229,13 @@ h1 {
 	text-decoration: none;
 }
 
-#rodeBalk {
+#rodeBalk, .logged-in-frontpage-menu {
 	padding: 20px 0!important;
+	font-weight: bold;
+}
+
+.logged-in-frontpage-menu .menu {
+	margin: 0;
 }
 
 .welkom .btn {
