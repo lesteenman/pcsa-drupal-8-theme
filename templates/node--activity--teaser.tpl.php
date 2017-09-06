@@ -94,8 +94,15 @@
 	<?php if (isset($content['field_location_user'])): ?>
 		<?php print render($content['field_location_user']); ?>
 	<?php else: ?>
-		<?php print render($content['field_activity_location']); ?>
+    <?php
+        $location = render($content['field_activity_location']);
+        if ($location)
+          print '<b>Adres: </b>' . $location;
+        else
+          print 'Locatie onbekend';
+    ?>
 	<?php endif; ?>
+	<br />
 
   <?=date('Y-m-d H:m', $startDate)?>
   <?php if ($endDate && $endDate !== $startDate): ?>
