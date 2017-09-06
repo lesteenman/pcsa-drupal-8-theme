@@ -84,36 +84,38 @@
 
   <?php print $user_picture; ?>
 
-  <?php print render($title_prefix); ?>
-  <?php print render($title_suffix); ?>
-
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
-
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
-  </div>
-
-	<div class="activity-attendants">
-		<?php print render($region['activity_presence']); ?>
-	</div>
+  <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
 
   <?php
       $startDate = strtotime($content['field_date']['#items'][0]['value']);
+	  $endDate = strtotime($content['field_date']['#items'][0]['value2']);
   ?>
+
+	<?php if (isset($content['field_location_user'])): ?>
+		<?php print render($content['field_location_user']); ?>
+	<?php else: ?>
+		<?php print render($content['field_activity_location']); ?>
+	<?php endif; ?>
+
+  <?=date('Y-m-d H:m', $startDate)?>
+  <?php if ($endDate && $endDate !== $startDate): ?>
+		<?php if (date('Y-m-d', $endDate) === date('Y-m-d', $startDate)): ?>
+  	 tot <?=date('H:m', $endDate)?>
+		<?php else: ?>
+  	 tot <?=date('m-d H:m', $endDate)?>
+		<?php endif; ?>
+  <?php endif; ?>
+
   <?php if ($startDate >= time()): ?>
     <div class="activity-set-attendance">
-      <h4>Uw Aanwezigheid:</h4>
     <span style="margin-right: 12px;"><?php print flag_create_link('presence_present', $node->nid);?></span>
     <?php print flag_create_link('presence_not_present', $node->nid);?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($comment_count): ?>
+    <div class='activity-teaser-comments'>
+        <?=$comment_count?> comments
     </div>
   <?php endif; ?>
 
