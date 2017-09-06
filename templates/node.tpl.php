@@ -80,12 +80,12 @@
  * @ingroup themeable
  */
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix bnode"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php print $user_picture; ?>
 
   <?php print render($title_prefix); ?>
-  <?php if ($teaser): ?>
+  <?php if (!$page): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
@@ -105,28 +105,14 @@
     ?>
   </div>
 
-  <?php if (!$teaser): ?>
-    <div class="activity-attendants">
-      <?php print render($region['activity_presence']); ?>
-    </div>
-  <?php endif; ?>
-
-  <?php
-      $startDate = strtotime($content['field_date']['#items'][0]['value']);
-  ?>
-  <?php if ($startDate >= time()): ?>
-    <div class="activity-set-attendance">
-      <?php if (!$teaser): ?><h2>Uw Aanwezigheid:</h2><?php endif; ?>
-    <?php print flag_create_link('presence_present', $node->nid);?>
-    <?php print flag_create_link('presence_not_present', $node->nid);?>
-    </div>
-  <?php endif; ?>
-
-  <?php if ($teaser && $comment_count): ?>
-    <div class='activity-teaser-comments'>
-        <?=$comment_count?> comments
-    </div>
-  <?php endif; ?>
-
   <?php print render($content['comments']); ?>
+
+	<div>
+		<a href="<?=$node_url?>">Read more</a>
+	</div>
+
+	<?php if ($teaser && $comment_count):?>
+		<?=$comment_count?> comments
+  <?php endif; ?>
+
 </div>
