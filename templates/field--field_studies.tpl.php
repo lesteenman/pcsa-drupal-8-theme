@@ -55,7 +55,7 @@ HTML comment.
 
 <?php if (count($items) > 0): ?>
 <label>
-Comissies:
+Studies:
 
 	<div class="field-studies <?php print $classes; ?>"<?php print $attributes; ?>>
 
