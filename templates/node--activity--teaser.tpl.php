@@ -104,14 +104,7 @@
 	<?php endif; ?>
 	<br />
 
-  <?=date('Y-m-d H:m', $startDate)?>
-  <?php if ($endDate && $endDate !== $startDate): ?>
-		<?php if (date('Y-m-d', $endDate) === date('Y-m-d', $startDate)): ?>
-  	 tot <?=date('H:m', $endDate)?>
-		<?php else: ?>
-  	 tot <?=date('m-d H:m', $endDate)?>
-		<?php endif; ?>
-  <?php endif; ?>
+  <?php print render($content['field_date']); ?>
 
   <?php if ($startDate >= time()): ?>
     <div class="activity-set-attendance">
