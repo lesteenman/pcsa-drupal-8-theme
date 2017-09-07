@@ -98,9 +98,26 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
-      print render($content);
+      print render($content['body']);
     ?>
   </div>
+
+  <?php print render($content['field_date']); ?>
+
+	<?php
+    $location_heer = render($content['field_location_user']);
+    $location_addr = render(field_view_field('node', $node, 'field_activity_location', ['label' => 'hidden']));
+    if ($location_heer) {
+      print $location_heer;
+    }
+    else if ($location_addr) {
+      print '<b>Adres: </b>' . $location_addr;
+    }
+    else {
+      print 'Locatie onbekend';
+    }
+	?>
+	<br />
 
 	<div class="activity-attendants">
 		<?php print render($region['activity_presence']); ?>

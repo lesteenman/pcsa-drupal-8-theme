@@ -86,25 +86,27 @@
 
   <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
 
-  <?php
-      $startDate = strtotime($content['field_date']['#items'][0]['value']);
-	  $endDate = strtotime($content['field_date']['#items'][0]['value2']);
-  ?>
-
-	<?php if (isset($content['field_location_user'])): ?>
-		<?php print render($content['field_location_user']); ?>
-	<?php else: ?>
-    <?php
-        $location = render($content['field_activity_location']);
-        if ($location)
-          print '<b>Adres: </b>' . $location;
-        else
-          print 'Locatie onbekend';
-    ?>
-	<?php endif; ?>
+	<?php
+		$location_heer = render($content['field_location_user']);
+		$location_addr = render(field_view_field('node', $node, 'field_activity_location', ['label' => 'hidden']));
+		if ($location_heer) {
+			print $location_heer;
+		}
+		else if ($location_addr) {
+			print '<b>Adres: </b>' . $location_addr;
+		}
+		else {
+    	print 'Locatie onbekend';
+		}
+	?>
 	<br />
 
   <?php print render($content['field_date']); ?>
+
+  <?php
+    $startDate = strtotime($content['field_date']['#items'][0]['value']);
+	  $endDate = strtotime($content['field_date']['#items'][0]['value2']);
+  ?>
 
   <?php if ($startDate >= time()): ?>
     <div class="activity-set-attendance">
