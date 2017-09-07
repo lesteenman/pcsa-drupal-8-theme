@@ -242,6 +242,10 @@ h1 {
 	border-top: 3px solid #ddd;
 }
 
+.front.not-logged-in #main-wrapper {
+	padding-top: 0;
+}
+
 .admin-bar-spacing {
 	margin-top: 60px;
 }
