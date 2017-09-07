@@ -93,8 +93,8 @@ setHeaderImage = function(header, image) {
 
 	// Try preferred width first, else fallback to either large or small
 	url = urls[image][imageSize];
-	if (!url) image = urls[image].large;
-	if (!url) image = urls[image].small;
+	if (!url) url = urls[image].large;
+	if (!url) url = urls[image].small;
 
 	jQuery('#header #header-image-' + header).css('background-image', 'url(' + url + ')');
 };

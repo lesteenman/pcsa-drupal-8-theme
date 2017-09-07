@@ -103,9 +103,6 @@
             print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav navbar-nav'))));
             ?>
             </div>
-            <?php
-            /* print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav navbar-nav')))); */
-            ?>
           </div>
 
         </div>
