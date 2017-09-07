@@ -97,17 +97,55 @@ function pcsa_drupal_theme_form_user_login_alter(&$form, &$form_state) {
 }
 
 function pcsa_drupal_theme_theme() {
-	$items = array();
-	// create custom user-login.tpl.php
-	$items['user_login'] = array(
-		'render element' => 'form',
-		'path' => drupal_get_path('theme', 'pcsa_drupal_theme') . '/templates',
-		'template' => 'user-login',
-		'preprocess functions' => array(
-			'pcsa_drupal_theme_preprocess_user_login'
-		),
-	);
-	return $items;
+	$path = drupal_get_path('theme', 'pcsa_drupal_theme') . '/templates';
+	return [
+		'user_login' => [
+			'render element' => 'form',
+			'path' => $path,
+			'template' => 'user-login',
+			'preprocess functions' => [
+				'pcsa_drupal_theme_preprocess_user_login'
+			],
+		],
+		'flickrgallery_albums' => [
+			'variables' => [
+				'description' => NULL,
+				'albums' => NULL,
+			],
+			'preprocess functions' => [
+				'preprocess_flickrgallery_albums',
+			],
+			'template'  => 'flickrgallery_albums',
+			'path' => $path,
+		],
+	];
+}
+
+function preprocess_flickrgallery_albums(&$variables) {
+	$albums = [];
+	foreach ($variables['albums'] as $key => $album_source) {
+		$image_link = $album_source['image_link'];
+		$title_link = $album_source['title_link'];
+
+		preg_match('/href="([a-zA-Z0-9\/]+)"/', $image_link, $link_matches);
+		$link = $link_matches[1];
+
+		preg_match('/src="([a-zA-Z0-9\/_.:]+)"/', $image_link, $cover_matches);
+		$cover_image = $cover_matches[1];
+
+		preg_match('/>(.*)<\/a>/', $title_link, $title_matches);
+		$title = $title_matches[1];
+
+		$albums[$key] = [
+			'link' => $link,
+			'cover_image' => $cover_image,
+			'title' => $title,
+			'image_link' => $album_source['image_link'],
+			'title_link' => $album_source['title_link'],
+		];
+	}
+	$variables['albums'] = $albums;
+	dpm($variables['albums'], 'variables');
 }
 
 function pcsa_drupal_theme_views_pre_render(&$view) {

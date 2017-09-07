@@ -5,16 +5,38 @@
 	align-content: stretch;
 }
 
-#page #main-wrapper #flickrgallery-albums .flickr-wrap {
-	flex: 1 1 auto;
-	width: 150px;
+#flickrgallery-albums {
+	margin: 0 auto;
+	max-width: 980px;
 }
 
-#page #main-wrapper #flickrgallery-albums .flickr-wrap a.flickrgallery {
+.flickr-album {
+	position: relative;
+	width: 195px;
+	height: 195px;
+	margin: 20px;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.flickr-overlay {
 	display: block;
-	height: 100px;
+	height: 100%;
+	background: linear-gradient(0deg,rgba(0,0,0,.9) 0,transparent 50%,transparent);
+	color: white;
 }
 
-#page #main-wrapper #flickrgallery-albums .flickr-wrap .flickr-total {
-	display: none;
+.flickr-overlay:hover {
+	color: rgb(185, 185, 185);
+}
+
+.flickr-title {
+	position: absolute;
+	bottom: 20px;
+	margin: 0 20px;
+	text-shadow: 0 1px 1px #000;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 20px;
 }
