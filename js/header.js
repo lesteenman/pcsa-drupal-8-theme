@@ -92,11 +92,11 @@ setHeaderImage = function(header, image) {
 	// console.log('setHeaderImage', header, image, urls[image][imageSize]);
 
 	// Try preferred width first, else fallback to either large or small
-	image = urls[image][imageSize];
-	if (!image) image = urls[image].large;
-	if (!image) image = urls[image].small;
+	url = urls[image][imageSize];
+	if (!url) image = urls[image].large;
+	if (!url) image = urls[image].small;
 
-	jQuery('#header #header-image-' + header).css('background-image', 'url(' + image + ')');
+	jQuery('#header #header-image-' + header).css('background-image', 'url(' + url + ')');
 };
 
 setInterval(function() {

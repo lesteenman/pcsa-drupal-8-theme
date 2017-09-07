@@ -20,7 +20,22 @@
 	}
 }
 
-@media all and (max-width: 800px) { /* screen size until 800px: mobile: nav = hamburger; */
+@media all and (min-width: 768px) {
+	#main-menu-mobile {
+		display: none;
+	}
+}
+
+
+@media all and (max-width: 768px) { /* screen size until 800px: mobile: nav = hamburger; */
+	#main-menu-desktop {
+		display: none;
+	}
+
+	.logged-in-menu {
+		display: none;
+	}
+
 	.navbar {
 		background: #eee!important;
 		height: 60px!important;
@@ -55,6 +70,10 @@
 		position: fixed;
 		margin-bottom: 0px;
 	}
+}
+
+.navbar-collapse.collapsing {
+	overflow: hidden;
 }
 
 /* adminimal admin menu */
@@ -149,4 +168,52 @@
 
 ul.menu li.first {
 	margin-left: 0;
+}
+
+.welkom {
+	padding: 50px 0;
+}
+
+.welkom, #rodeBalk, .logged-in-menu {
+	background: #b92525;
+	text-align: justify;
+	font-size: initial;
+	color: #eee;
+
+	border-top: 8px solid #6B1313;
+}
+
+#rodeBalk, .logged-in-menu {
+	padding: 20px 0;
+	font-weight: bold;
+}
+
+.not-front .logged-in-menu {
+	padding: 5px 0;
+	font-weight: initial;
+	font-size: 105%;
+}
+
+.logged-in-menu .container {
+	max-width: 970px;
+}
+
+.logged-in-menu .menu {
+	padding: 0;
+}
+
+.logged-in-menu li.leaf {
+	float: left;
+	list-style: none;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+.logged-in-menu li>a {
+	color: #ddd;
+	text-decoration: none;
+}
+
+.logged-in-menu .menu {
+	margin: 0;
 }

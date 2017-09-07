@@ -35,11 +35,11 @@ function pcsa_drupal_theme_preprocess_page(&$variables) {
 		drupal_add_js(['image_root' => $path . '/images'], array('type' => 'setting'));
 	}
 
-	if($variables['page']['sidebar_first'] && $variables['page']['sidebar_second']){
+	if(($variables['page']['sidebar_first'] ?? false) && ($variables['page']['sidebar_second'] ?? false)) {
 		$variables['contentclass'] = 'col-sm-6 col-sm-push-3';
 		$variables['firstsidebarpush'] = 'col-sm-pull-6';
 	}
-	elseif($variables['page']['sidebar_first'] || $variables['page']['sidebar_second']){
+	elseif(($variables['page']['sidebar_first'] ?? false) || ($variables['page']['sidebar_second'] ?? false)){
 		if($variables['page']['sidebar_first']){
 			$variables['contentclass'] = 'col-sm-9 col-sm-push-3';
 			$variables['firstsidebarpush'] = 'col-sm-pull-9';		

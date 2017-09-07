@@ -91,7 +91,21 @@
 
           <!-- display the navigation items, load them from the selected main_menu in drupal -->
           <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-            <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav navbar-nav')))); ?>
+            <div id='main-menu-mobile'>
+            <?php
+              $logged_in_menu = menu_navigation_links('menu-logged-in-menu');
+              $combined = array_merge($main_menu, $logged_in_menu);
+              print theme('links__system_main_menu', array('links' => $combined, 'attributes' => array('class' => array('nav navbar-nav'))));
+            ?>
+            </div>
+            <div id='main-menu-desktop'>
+            <?php
+            print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav navbar-nav'))));
+            ?>
+            </div>
+            <?php
+            /* print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav navbar-nav')))); */
+            ?>
           </div>
 
         </div>
@@ -112,6 +126,8 @@
           </div>
         </section>
     <?php endif ?>
+
+	<?php print render($page['top_menu']); ?>
 
 	<div id="main-wrapper">
       <section class="row clearfix">
@@ -172,13 +188,13 @@
         </div>
       </div> -->
 
-      <!--<?php if ($page['sidebar_first']): ?>
+      <!--<?php if ($page['sidebar_first'] ?? false): ?>
         <div id="sidebar-first" class="column sidebar col-sm-3 <?php echo $firstsidebarpush; ?>"><div class="section">
           <?php print render($page['sidebar_first']); ?>
         </div></div>
       <?php endif; ?>-->
 
-      <!--<?php if ($page['sidebar_second']): ?>
+      <!--<?php if ($page['sidebar_second'] ?? false): ?>
         <div id="sidebar-second" class="column sidebar col-sm-3"><div class="section">
           <?php print render($page['sidebar_second']); ?>
         </div></div>

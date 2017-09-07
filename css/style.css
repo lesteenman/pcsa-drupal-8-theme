@@ -204,41 +204,6 @@ h1 {
 	/*text-align: center;*/
 }
 
-.welkom, #rodeBalk, .logged-in-frontpage-menu {
-	background: #b92525;
-	padding: 50px 0;
-	text-align: justify;
-	font-size: initial;
-	color: #eee;
-
-	border-top: 8px solid #6B1313;
-}
-
-.logged-in-frontpage-menu .menu {
-	padding: 0;
-}
-
-.logged-in-frontpage-menu li.leaf {
-	float: left;
-	list-style: none;
-	list-style-type: none;
-	list-style-image: none;
-}
-
-.logged-in-frontpage-menu li>a {
-	color: #ddd;
-	text-decoration: none;
-}
-
-#rodeBalk, .logged-in-frontpage-menu {
-	padding: 20px 0!important;
-	font-weight: bold;
-}
-
-.logged-in-frontpage-menu .menu {
-	margin: 0;
-}
-
 .welkom .btn {
 	display: block;
 	width: 160px;

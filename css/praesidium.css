@@ -3,6 +3,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	max-width: 400px;
+	margin: 30px auto;
 }
 
 @media all and (max-width: 560px) {

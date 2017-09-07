@@ -17,9 +17,10 @@ scripts[] = js/pcsa.js
 regions[header] = Header 
 regions[highlighted] = Highlighted 
 regions[help] = Help 
+regions[top_menu] = Top Menu
 regions[content] = Content 
-regions[sidebar_first] = Left sidebar 
-regions[sidebar_second] = Right sidebar 
+" regions[sidebar_first] = Left sidebar 
+" regions[sidebar_second] = Right sidebar 
 regions[footer] = Footer 
 regions[activity_presence] = Activity Presence
 
