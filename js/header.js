@@ -31,9 +31,9 @@ var urls = [
 	},
 	{
 		// Milaan. Original: https://www.flickr.com/photos/pcsa-incognito/36284435813/in/dateposted-public/
-		"preload": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_m_d.jpg"
-		"small": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_z_d.jpg"
-		"large": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_b_d.jpg"
+		"preload": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_m_d.jpg",
+		"small": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_z_d.jpg",
+		"large": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_b_d.jpg",
 	},
 	{
 		// HAIP End of Summer. Original: https://www.flickr.com/photos/pcsa-incognito/36909000126/in/album-72157686293751274/
