@@ -37,9 +37,9 @@ var urls = [
 	},
 	{
 		// HAIP End of Summer. Original: https://www.flickr.com/photos/pcsa-incognito/36909000126/in/album-72157686293751274/
-		"preload": "https://farm5.staticflickr.com/4332/36909000126_d0b1feaea9_m_d.jpg",
-		"small": "https://farm5.staticflickr.com/4332/36909000126_d0b1feaea9_z_d.jpg",
-		"large": "https://farm5.staticflickr.com/4332/36909000126_5ccc72c4cb_h_d.jpg",
+		"preload": "https://farm5.staticflickr.com/4332/36909000126_034d23c59d_m_d.jpg",
+		"small": "https://farm5.staticflickr.com/4332/36909000126_034d23c59d_z_d.jpg",
+		"large": "https://farm5.staticflickr.com/4332/36909000126_27ba7812c4_h_d.jpg",
 	},
 ];
 
