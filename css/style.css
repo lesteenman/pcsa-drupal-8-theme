@@ -96,17 +96,12 @@ label > * {
 html, body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
 }
 
 body { 
 	background: #111;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.45;
-	overflow: hidden;
-	/*max-height:100%;
-	position: fixed;
-	width:100%;*/
 }
 
 .secondaryNew li{
