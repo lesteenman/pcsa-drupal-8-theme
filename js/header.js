@@ -5,6 +5,7 @@ var preload_duration = 750;
 var theme_image_root = Drupal.settings.image_root;
 console.log('Image root:', theme_image_root, Drupal.settings);
 
+// Note: Actual sizes on Flickr are small, medium and large for preload, small and large, respectively.
 var urls = [
 	{
 		// Original: https://www.flickr.com/photos/pcsa-incognito/8731624016/in/album-72157633476703042/
@@ -27,6 +28,18 @@ var urls = [
 		"preload": "https://farm2.staticflickr.com/1263/1453503542_ccafba5687_m_d.jpg",
 		"small": "https://farm2.staticflickr.com/1263/1453503542_ccafba5687_z_d.jpg",
 		"large": "https://farm2.staticflickr.com/1263/1453503542_ccafba5687_b_d.jpg",
+	},
+	{
+		// Milaan. Original: https://www.flickr.com/photos/pcsa-incognito/36284435813/in/dateposted-public/
+		"preload": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_m_d.jpg"
+		"small": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_z_d.jpg"
+		"large": "https://farm5.staticflickr.com/4331/36284435813_02a0ee72ed_b_d.jpg"
+	},
+	{
+		// HAIP End of Summer. Original: https://www.flickr.com/photos/pcsa-incognito/36909000126/in/album-72157686293751274/
+		"preload": "https://farm5.staticflickr.com/4332/36909000126_d0b1feaea9_m_d.jpg",
+		"small": "https://farm5.staticflickr.com/4332/36909000126_d0b1feaea9_z_d.jpg",
+		"large": "https://farm5.staticflickr.com/4332/36909000126_5ccc72c4cb_h_d.jpg",
 	},
 ];
 
