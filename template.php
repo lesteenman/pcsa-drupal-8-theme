@@ -130,7 +130,7 @@ function preprocess_flickrgallery_albums(&$variables) {
 		preg_match('/href="([a-zA-Z0-9\/]+)"/', $image_link, $link_matches);
 		$link = $link_matches[1];
 
-		preg_match('/src="([a-zA-Z0-9\/_.:]+)"/', $image_link, $cover_matches);
+		preg_match('/src="(.+?)"/', $image_link, $cover_matches);
 		$cover_image = $cover_matches[1];
 
 		preg_match('/>(.*)<\/a>/', $title_link, $title_matches);

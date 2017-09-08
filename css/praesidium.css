@@ -1,17 +1,29 @@
-.praesidium-members > div {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	max-width: 400px;
-	margin: 30px auto;
+.praesidium-members .panel-separator {
+	display: none;
 }
 
-@media all and (max-width: 560px) {
+@media all and (max-width: 600px) {
 	.praesidium-members > div {
+		display: flex;
 		flex-direction: column;
+		justify-content: space-around;
 	}
+}
+
+.praesidium-members > div {
+	margin: 30px auto;
 }
 
 .view-id-praesidium_member {
 	text-align: center;
+}
+
+.view-praesidium-member img {
+	width: 160px;
+	height: 160px;
+}
+
+.praesidium-member {
+	display: inline-block;
+	margin-right: 20px;
 }
