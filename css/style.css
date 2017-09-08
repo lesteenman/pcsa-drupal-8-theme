@@ -244,6 +244,7 @@ h1 {
 
 .front.not-logged-in #main-wrapper {
 	padding-top: 0;
+	border-top: none;
 }
 
 .admin-bar-spacing {
