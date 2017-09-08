@@ -41,6 +41,12 @@ var urls = [
 		"small": "https://farm5.staticflickr.com/4332/36909000126_034d23c59d_z_d.jpg",
 		"large": "https://farm5.staticflickr.com/4332/36909000126_27ba7812c4_h_d.jpg",
 	},
+	{
+		// Das. Original: https://www.flickr.com/photos/pcsa-incognito/36707523410/in/dateposted-public/
+		"preload": "https://farm5.staticflickr.com/4367/36707523410_7315f853c6_m_d.jpg",
+		"small": "https://farm5.staticflickr.com/4367/36707523410_7315f853c6_z_d.jpg",
+		"large": "https://farm5.staticflickr.com/4367/36707523410_f8cc489e44_k_d.jpg",
+	}
 ];
 
 var loadCounter = 0;
