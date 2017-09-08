@@ -94,7 +94,7 @@
             <div id='main-menu-mobile'>
             <?php
               $logged_in_menu = menu_navigation_links('menu-logged-in-menu');
-              $combined = array_merge($main_menu, $logged_in_menu);
+              $combined = array_merge($logged_in_menu, $main_menu);
               print theme('links__system_main_menu', array('links' => $combined, 'attributes' => array('class' => array('nav navbar-nav'))));
             ?>
             </div>
