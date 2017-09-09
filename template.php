@@ -127,6 +127,18 @@ function pcsa_drupal_theme_form_user_login_alter(&$form, &$form_state) {
 	$form['pass']['#description'] = t('');
 }
 
+/* function pcsa_drupal_theme_preprocess_views_view_table(&$vars) { */
+/*     $view_name = $vars['view']->name; */
+/*     $display_id = $vars['view']->current_display; */
+
+/*     /1* dpm(['view_name' => $view_name, 'display' => $display_id]); *1/ */
+/*     dpm($vars); */
+
+/*     if ($view_name === 'activities') { */
+/*        $vars['future_events'] = $display_id === 'activities_present'; */
+/*     } */
+/* } */
+
 function pcsa_drupal_theme_theme() {
 	$path = drupal_get_path('theme', 'pcsa_drupal_theme') . '/templates';
 	return [

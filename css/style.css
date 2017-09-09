@@ -10,16 +10,6 @@ label > * {
 	max-width: 970px;
 }
 
-#activities-old, #activities-new {
-	float: none!important;
-	margin-bottom: 50px;
-
-}
-
-#activities-new .activitytable, #activities-old .activitytable {
-	width: 80%!important;
-}
-
 .node-teaser img {
 	display: none;
 }
@@ -84,16 +74,6 @@ label > * {
 
 	#praesidiumlist li img {
 		width: 100px!important;
-	}
-
-	#activities-new .activitytable, #activities-old .activitytable {
-		width: 100%!important;
-		font-size: 11px!important;
-	}
-
-	#activities-new .activitytable tr td:nth-of-type(5), #activities-new .activitytable th:nth-of-type(5)
-	, #activities-new .activitytable col:nth-of-type(5){
-		display: none;
 	}
 }
 
@@ -350,54 +330,6 @@ margin-top: 30px;
 	overflow: hidden;
 }
 
-#activities-old {
-	float: left;
-}
-
-#activities-new {
-	float: right;
-}
-
-.activitytable {
-	table-layout: fixed;
-	width: 500px;
-}
-
-#activities-new .activitytable{
-	width: 600px;
-}
-
-.activitytable tr:nth-of-type(odd) {
-	background: #eee;
-}
-
-.activitytable th {
-	background: #ccc;
-	color: #222;
-}
-
-.activitytable th, .activitytable td {
-	padding: 3px 6px;
-	text-align: left;
-	vertical-align: top;
-}
-
-#activiteit {
-	clear: both;
-	overflow: hidden;
-}
-
-#activiteit ul {
-	display: block;
-	float: left;
-	list-style: none;
-	padding: 0;
-}
-
-#activiteit > span {
-	display: block;
-}
-
 .main-title {
 	background: #FAFAFA;
 }
@@ -406,27 +338,6 @@ margin-top: 30px;
 	margin: 0 0 1em;
 }
 
-
-.activity-attendants {
-	display: flex;
-	flex-direction: row;
-	max-width: 400px;
-}
-
-.activity-attendants > div {
-	flex: 1 1 auto;
-}
-
-.activity-attendants .container {
-	width: auto;
-	max-width: initial;
-	padding: 0;
-}
-
-.activity-attendants h2 {
-	margin: 0;
-	font-size: 1.2em;
-}
 
 .noScroll {
 	overflow: hidden;

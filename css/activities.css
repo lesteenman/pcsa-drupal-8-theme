@@ -1,0 +1,71 @@
+.activities {
+	table-layout: fixed;
+	width: 750px;
+}
+
+@media all and (max-width: 800px) {
+    .activities {
+        width: 100%;
+    }
+
+    .activities .column-location, .activities .header-location {
+        display: none;
+        width: 0px;
+    }
+}
+
+.activities .column-presence, .activities .header-presence {
+    width: 100px;
+}
+
+.activities tr:nth-of-type(odd) {
+	background: #eee;
+}
+
+.activities th {
+	background: #ccc;
+	color: #222;
+}
+
+.activities th, .activities td {
+	padding: 3px 6px;
+	text-align: left;
+	vertical-align: top;
+}
+
+#activiteit {
+	clear: both;
+	overflow: hidden;
+}
+
+#activiteit ul {
+	display: block;
+	float: left;
+	list-style: none;
+	padding: 0;
+}
+
+#activiteit > span {
+	display: block;
+}
+
+.activity-attendants {
+	display: flex;
+	flex-direction: row;
+	max-width: 400px;
+}
+
+.activity-attendants > div {
+	flex: 1 1 auto;
+}
+
+.activity-attendants .container {
+	width: auto;
+	max-width: initial;
+	padding: 0;
+}
+
+.activity-attendants h2 {
+	margin: 0;
+	font-size: 1.2em;
+}
