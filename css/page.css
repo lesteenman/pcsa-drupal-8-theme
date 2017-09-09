@@ -6,6 +6,7 @@
  */
 
 .navbar-brand {
+	z-index: 10; /* Place it over the navigation items */
 	position: absolute;
 	left: 0px;
 }
