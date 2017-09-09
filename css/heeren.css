@@ -15,7 +15,7 @@
 }
 
 /* Hide the heeren list on small screens when someone is selected */
-@media all and (max-width: 800px) {
+@media all and (max-width: 768px) {
 	.heer-info {
 		position: static!important;
 		margin: 20px 0!important;

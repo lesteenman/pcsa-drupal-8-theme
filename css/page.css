@@ -5,6 +5,32 @@
  * Also places footer in the correct place. Header is done by navigation.css.
  */
 
+.navbar-brand {
+	position: absolute;
+	left: 0px;
+}
+
+a.navbar-brand, a.navbar-brand:hover, a.navbar-brand:visited{
+	font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+	color: #b92525;
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 1px 1px  #000;
+}
+
+@media all and (max-width: 1000px) { /* screen size until 1000px */
+	a.navbar-brand, a.navbar-brand:hover, a.navbar-brand:visited{
+		font-size: 18px!important;
+	}
+}
+
+@media all and (max-width: 768px) { /* screen size until 768px: mobile: nav = hamburger; */
+	a.navbar-brand, a.navbar-brand:hover, a.navbar-brand:visited{
+		font-size: 16px!important;
+		text-shadow: none!important;
+	}
+}
+
 #page-wrapper {
 	position: relative;
 	height: 100%;
@@ -14,10 +40,6 @@
 	max-height:100%;
 	background: #FAFAFA;
 	padding: 60px 0 0;
-}
-
-.navbar .container {
-	margin: 0;
 }
 
 #footer {
@@ -49,7 +71,7 @@
 	}
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 768px) {
 	#footer {
 		height: 100px;
 	}

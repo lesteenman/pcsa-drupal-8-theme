@@ -1,8 +1,12 @@
+body {
+	text-align: justify;
+}
+
 label > * {
 	font-weight: initial;
 }
 
-#main-wrapper .container{
+.container {
 	max-width: 970px;
 }
 
@@ -58,7 +62,7 @@ label > * {
 	}
 }
 
-@media all and (max-width: 800px) { /* screen size until 800px: mobile: nav = hamburger; */
+@media all and (max-width: 768px) { /* screen size until 768px: mobile: nav = hamburger; */
 
 	#header, #header .container {
 		height: 560px!important;

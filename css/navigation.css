@@ -9,9 +9,14 @@
 	}
 }
 
+.navbar-right {
+	max-width: 680px;
+	margin-right: -15px !important;
+}
+
 @media all and (max-width: 1000px) { /* screen size until 1000px */
-	.navbar .navbar-header a, .navbar .navbar-header a:hover, .navbar .navbar-header a:visited{
-		font-size: 18px!important;
+	.navbar-right {
+		margin-right: -5px !important;
 	}
 
 	.navbar-relative {
@@ -27,7 +32,7 @@
 }
 
 
-@media all and (max-width: 768px) { /* screen size until 800px: mobile: nav = hamburger; */
+@media all and (max-width: 768px) { /* screen size until 768px: mobile: nav = hamburger; */
 	#main-menu-desktop {
 		display: none;
 	}
@@ -42,13 +47,13 @@
 		padding: 5px 0!important;
 		color: #444!important;
 	}
-	.navbar .navbar-header a, .navbar .navbar-header a:hover, .navbar .navbar-header a:visited{
-		font-size: 16px!important;
-		text-shadow: none!important;
+
+	.navbar .container {
+		margin: 0px;
 	}
 
 	.navbar-right {
-		max-height: 400px!important;
+		max-height: 377px !important;
 	}
 
 	.navbar .nav li a, .navbar .nav li a:visited {
@@ -59,6 +64,10 @@
 		background: #eee;
 		border: none;
 		margin-top: 4px;
+	}
+
+	.navbar-collapse.collapsing {
+		background: #eee;
 	}
 
 	.navScroll .navbar-collapse[aria-expanded=true]{
@@ -74,6 +83,10 @@
 
 .navbar-collapse.collapsing {
 	overflow: hidden;
+}
+
+.navbar-nav {
+	margin: 0 !important;
 }
 
 /* adminimal admin menu */
@@ -100,14 +113,6 @@
    	transition: all 0.4s ease;
 }
 
-.navbar .navbar-header a, .navbar .navbar-header a:hover, .navbar .navbar-header a:visited{
-	font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
-	color: #b92525;
-	font-size: 24px;
-	font-weight: bold;
-	text-shadow: 1px 1px  #000;
-}
-
 .nav {
 	font-size: 14px;
 	font-weight: bold;
@@ -121,10 +126,6 @@
 .navbar .nav li a:hover {
 	color: #b92525!important;
 	text-decoration: underline;
-}
-
-.navbar-right {
-	max-width: 680px;
 }
 
 .nav.secondary {
@@ -148,7 +149,7 @@
 	border-color: #ccc;
 }
 
-.navScroll .navbar-header a, .navScroll .navbar-header a:hover, .navScroll .navbar-header a:visited{
+.navScroll a.navbar-brand, .navScroll a.navbar-brand:hover, .navScroll a.navbar-brand:visited{
 	font-size: 18px;
 	text-shadow: none;
 }
@@ -174,7 +175,7 @@ ul.menu li.first {
 	padding: 50px 0;
 }
 
-.welkom, #rodeBalk, .logged-in-menu {
+.welkom, .logged-in-menu {
 	background: #b92525;
 	text-align: justify;
 	font-size: initial;
@@ -183,7 +184,8 @@ ul.menu li.first {
 	border-top: 8px solid #6B1313;
 }
 
-#rodeBalk, .logged-in-menu {
+.logged-in-menu {
+	position: relative;
 	padding: 20px 0;
 	font-weight: bold;
 }
@@ -196,6 +198,18 @@ ul.menu li.first {
 
 .logged-in-menu .container {
 	max-width: 970px;
+	text-align: right;
+}
+
+.logged-in-menu .container .content {
+	display: inline-block;
+}
+
+/* Reverse padding (right to left) of something in bootstrap/system.menus.css */
+.logged-in-menu li.expanded,
+	.logged-in-menu li.collapsed,
+	.logged-in-menu li.leaf {
+	padding: 0.2em 0 0 0.5em;
 }
 
 .logged-in-menu .menu {
