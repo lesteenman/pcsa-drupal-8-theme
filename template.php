@@ -69,16 +69,14 @@ function pcsa_drupal_theme_preprocess_node(&$variables) {
 				$variables['region'][$region_key] = $blocks;
 			}
 			else {
-				$variables['region'][$region_key] = array();
+				$variables['region'][$region_key] = [];
 			}
 		}
 	}
 }
 
-/*
- *  Remove labels and add HTML5 placeholder attribute to login form
- */
 function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
+	// Remove labels and add HTML5 placeholder attribute to login form
 	if (in_array($form_id, ['user_login', 'user_login_block']))
 		$form['name']['#attributes']['placeholder'] = t('Gebruikersnaam of email');
 	else if ($form_id === 'user_pass')
@@ -86,12 +84,28 @@ function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
 	$form['pass']['#attributes']['placeholder'] = t( 'Wachtwoord' );
 	$form['name']['#title_display'] = "invisible";
 	$form['pass']['#title_display'] = "invisible";
+
+	// Hide other form elements during password reset
+	if ($form_id === 'user_profile_form') {
+		global $user;
+		if (!$user->uid) {
+			$form['account']['#title'] = 'Password Reset';
+			foreach ($form as $key => $formElement) {
+				// Special form elements
+				if (substr($key, 0, 1) === '#') continue;
+
+				$special = ['actions', 'account', 'form_id', 'form_build_id'];
+				$useFields = ['field_email', 'pass', 'name'];
+				if (!in_array($key, array_merge($special, $useFields))) {
+					unset($form[$key]);
+				}
+			}
+		}
+	}
 }
 
-/*
- *  Remove login form descriptions
- */
 function pcsa_drupal_theme_form_user_login_alter(&$form, &$form_state) {
+	// Remove login form descriptions
 	$form['name']['#description'] = t('');
 	$form['pass']['#description'] = t('');
 }
