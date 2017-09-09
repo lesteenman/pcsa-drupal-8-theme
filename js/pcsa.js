@@ -26,13 +26,13 @@ jQuery(document).ready(function(){
 	console.log('start');
 
 	// Scrollbar change
-	var scroll_start = jQuery('#page-wrapper').scrollTop();
+	var scroll_start = jQuery('body').scrollTop();
 	var offset = 300;
 	
 	if (location.pathname == Drupal.settings.basePath || location.pathname == '/home') {
 		//Change nav on scroll
-		jQuery('#page-wrapper').scroll(function() { 
-			scroll_start = jQuery('#page-wrapper').scrollTop();
+		jQuery(window).scroll(function() { 
+			scroll_start = jQuery('body').scrollTop();
 
 			if(scroll_start > offset) {
 				jQuery(".navbar").addClass("navScroll");
