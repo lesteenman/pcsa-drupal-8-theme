@@ -1,4 +1,4 @@
-name = Incognito
+name = P.C.S.A.
 description = Het eerste, oudste, rijckste en voornaamste thema.
 core = 7.x
 
@@ -26,4 +26,4 @@ regions[content] = Content
 regions[footer] = Footer 
 regions[activity_presence] = Activity Presence
 
-version = 1.0
+version = 7.x-1.2

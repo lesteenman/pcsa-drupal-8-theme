@@ -1,6 +1,6 @@
 <?php
 
-function pcsa_drupal_theme_preprocess_html(&$variables) {
+function pcsa_preprocess_html(&$variables) {
 	// Add bootstrap css to HTML
 	drupal_add_css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array('type' => 'external'));
 
@@ -26,12 +26,12 @@ function pcsa_drupal_theme_preprocess_html(&$variables) {
 /**
  * Override or insert variables into the page template.
  */
-function pcsa_drupal_theme_preprocess_page(&$variables) {
+function pcsa_preprocess_page(&$variables) {
 	drupal_add_js('https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAWBp751VogsaCKYseOoHTEuTcTqSRsJEg', 'external');
 
 	if ($variables['is_front']) {
-		drupal_add_js(drupal_get_path('theme', 'pcsa_drupal_theme') . '/js/header.js');
-		$path = drupal_get_path('theme', 'pcsa_drupal_theme');
+		drupal_add_js(drupal_get_path('theme', 'pcsa') . '/js/header.js');
+		$path = drupal_get_path('theme', 'pcsa');
 		drupal_add_js(['image_root' => $path . '/images'], array('type' => 'setting'));
 	}
 
@@ -53,7 +53,7 @@ function pcsa_drupal_theme_preprocess_page(&$variables) {
 	}
 }
 
-function pcsa_drupal_theme_preprocess_node(&$variables) {
+function pcsa_preprocess_node(&$variables) {
 	// Remove 'add new comment' link from nodes.
 	if (in_array($variables['type'], ['activity', 'news'])) {
 		unset($variables['elements']['links']['comment']['#links']['comment-add']);
@@ -75,7 +75,7 @@ function pcsa_drupal_theme_preprocess_node(&$variables) {
 	}
 }
 
-function pcsa_drupal_theme_form_comment_form_alter(&$form, &$form_state) {
+function pcsa_form_comment_form_alter(&$form, &$form_state) {
 	$form['author']['#access'] = false;
 
 	if ($form['node_type']['#value'] === 'comment_node_poll') {
@@ -86,7 +86,7 @@ function pcsa_drupal_theme_form_comment_form_alter(&$form, &$form_state) {
 	$form['subject']['#access'] = false;
 }
 
-function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
+function pcsa_form_alter(&$form, &$form_state, $form_id) {
 	// Remove labels and add HTML5 placeholder attribute to login form
 	if (in_array($form_id, ['user_login', 'user_login_block']))
 		$form['name']['#attributes']['placeholder'] = t('Gebruikersnaam of email');
@@ -101,7 +101,7 @@ function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
 		global $user;
 		if (!$user->uid) {
 			$form['account']['#title'] = 'Password Reset';
-			$form['#submit'][] = 'pcsa_redirect_after_password_reset';
+			$form['#submit'][] = 'redirect_after_password_reset';
 			foreach ($form as $key => $formElement) {
 				// Special form elements
 				if (substr($key, 0, 1) === '#') continue;
@@ -116,18 +116,18 @@ function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
 	}
 }
 
-function pcsa_redirect_after_password_reset($form, &$form_state) {
+function redirect_after_password_reset($form, &$form_state) {
 	global $user;
 	$form_state['redirect'] = "/user/{$user->uid}/edit";
 }
 
-function pcsa_drupal_theme_form_user_login_alter(&$form, &$form_state) {
+function pcsa_form_user_login_alter(&$form, &$form_state) {
 	// Remove login form descriptions
 	$form['name']['#description'] = t('');
 	$form['pass']['#description'] = t('');
 }
 
-/* function pcsa_drupal_theme_preprocess_views_view_table(&$vars) { */
+/* function pcsa_preprocess_views_view_table(&$vars) { */
 /*     $view_name = $vars['view']->name; */
 /*     $display_id = $vars['view']->current_display; */
 
@@ -139,15 +139,15 @@ function pcsa_drupal_theme_form_user_login_alter(&$form, &$form_state) {
 /*     } */
 /* } */
 
-function pcsa_drupal_theme_theme() {
-	$path = drupal_get_path('theme', 'pcsa_drupal_theme') . '/templates';
+function pcsa_theme() {
+	$path = drupal_get_path('theme', 'pcsa') . '/templates';
 	return [
 		'user_login' => [
 			'render element' => 'form',
 			'path' => $path,
 			'template' => 'user-login',
 			'preprocess functions' => [
-				'pcsa_drupal_theme_preprocess_user_login'
+				'pcsa_preprocess_user_login'
 			],
 		],
 		'flickrgallery_albums' => [
@@ -191,7 +191,7 @@ function preprocess_flickrgallery_albums(&$variables) {
 	dpm($variables['albums'], 'variables');
 }
 
-function pcsa_drupal_theme_views_pre_render(&$view) {
+function pcsa_views_pre_render(&$view) {
 	if ($view->name === 'new_content') {
 		if (user_access('view nodes')) {
 			$view->build_info['title'] = "Recent";
@@ -202,8 +202,8 @@ function pcsa_drupal_theme_views_pre_render(&$view) {
 	}
 }
 
-function pcsa_drupal_theme_pwa_manifest_alter(&$manifest) {
-	$path = drupal_get_path('theme', 'pcsa_drupal_theme');
+function pcsa_pwa_manifest_alter(&$manifest) {
+	$path = drupal_get_path('theme', 'pcsa');
 	$manifest['icons'] = [
 		[
 			'src' => url($path . '/assets/icon-48.png'),
