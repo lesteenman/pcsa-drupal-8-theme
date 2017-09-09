@@ -88,7 +88,8 @@
 
 	<?php
 		$location_heer = render($content['field_location_user']);
-		$location_addr = render(field_view_field('node', $node, 'field_activity_location', ['label' => 'hidden']));
+		$location_addr_data = field_view_field('node', $node, 'field_activity_location', ['label' => 'hidden']);
+		$location_addr = render($location_addr_data);
 		if ($location_heer) {
 			print $location_heer;
 		}
