@@ -75,6 +75,17 @@ function pcsa_drupal_theme_preprocess_node(&$variables) {
 	}
 }
 
+function pcsa_drupal_theme_form_comment_form_alter(&$form, &$form_state) {
+	$form['author']['#access'] = false;
+
+	if ($form['node_type']['#value'] === 'comment_node_poll') {
+		$form['subject']['#title'] = 'Onderwerp';
+		return;
+	}
+
+	$form['subject']['#access'] = false;
+}
+
 function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
 	// Remove labels and add HTML5 placeholder attribute to login form
 	if (in_array($form_id, ['user_login', 'user_login_block']))

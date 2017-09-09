@@ -227,14 +227,13 @@ h1 {
 
 .main {
 	background: #FAFAFA;
-	/*border-top: 3px solid #ddd;#/
-	padding-bottom: 50px;
-	}
+}
 
-	.main h2 {
+.main h2 {
+	font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
 	margin: 60px 0 20px 0;
 	font-weight: bold;
-	/*color: #000080;*/
+	color: #333;
 }
 
 #main-wrapper {
@@ -257,7 +256,7 @@ margin-top: 30px;
 
 .main-content h2 {
 	margin-top: 80px;
-	color: #000080;
+	/* color: #000080; */
 }
 
 .newslist .viewcontent {
@@ -307,56 +306,6 @@ margin-top: 30px;
 	font-size: 16px;
 	font-style: italic;
 	margin-bottom: 10px;
-}
-
-#commentsection h2 {
-	font-size: 24px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #000080;
-}
-
-#commentsection #commentlist {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-#commentlist li {
-	display: block;
-	width: 600px;
-	min-height: 90px;
-	margin: 0 0 15px 0;
-}
-
-#commentlist .comment {
-	display: block;
-	margin: -90px 0 0 85px;
-	padding: 0 0 40px 10px;
-	min-height: 90px;
-
-	border: 1px solid #777;
-	border-width: 0 0 0 1px;
-}
-
-#commentlist .author {
-	display: block;
-	margin: -30px 0 0 95px;
-
-	font-weight: normal;
-	font-size: 12px;
-	color: #666;
-}
-
-#newcomment {
-	margin-top: 35px;
-}
-
-#commentlist img {
-	width: 75px;
-}
-
-#newcomment h3 {
-	font-size: 18px;
 }
 
 .generatie {

@@ -1,0 +1,60 @@
+#comments h2 {
+    font-size: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+#comments {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comment {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.comment .avatar {
+    display: inline-block;
+    width: 75px;
+}
+
+.comment .avatar img {
+    display: block;
+    margin: 0 auto;
+    height: 75px;
+}
+
+.comment .content-author {
+    display: inline-block;
+    border-left: 1px solid #777;
+    min-height: 75px;
+    vertical-align: top;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.comment .author {
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+    color: #666;
+}
+
+.comment h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.comment h3 a, .comment h3 a:hover, .comment h3 a:visited {
+    color: #333;
+}
+
+#newcomment {
+    margin-top: 35px;
+}
+
+#newcomment h3 {
+    font-size: 18px;
+}
