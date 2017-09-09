@@ -90,6 +90,7 @@ function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
 		global $user;
 		if (!$user->uid) {
 			$form['account']['#title'] = 'Password Reset';
+			$form['#submit'][] = 'pcsa_redirect_after_password_reset';
 			foreach ($form as $key => $formElement) {
 				// Special form elements
 				if (substr($key, 0, 1) === '#') continue;
@@ -102,6 +103,11 @@ function pcsa_drupal_theme_form_alter(&$form, &$form_state, $form_id) {
 			}
 		}
 	}
+}
+
+function pcsa_redirect_after_password_reset($form, &$form_state) {
+	global $user;
+	$form_state['redirect'] = "/user/{$user->uid}/edit";
 }
 
 function pcsa_drupal_theme_form_user_login_alter(&$form, &$form_state) {
