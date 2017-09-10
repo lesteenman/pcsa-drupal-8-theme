@@ -161,6 +161,17 @@ function pcsa_theme() {
 			'template'  => 'flickrgallery_albums',
 			'path' => $path,
 		],
+		'flickrgallery_photo' => [
+			'variables' => [
+				'image' => NULL,
+				'image_meta' => NULL,
+			],
+			'preprocess functions' => [
+				'preprocess_flickrgallery_photo',
+			],
+			'template'  => 'flickrgallery_photo',
+			'path' => $path,
+		],
 	];
 }
 
@@ -188,7 +199,15 @@ function preprocess_flickrgallery_albums(&$variables) {
 		];
 	}
 	$variables['albums'] = $albums;
-	dpm($variables['albums'], 'variables');
+}
+
+function preprocess_flickrgallery_photo(&$variables) {
+		preg_match('/href="(.+?)"/', $variables['image']['image'], $url_matches);
+		preg_match('/class="(.+?)"/', $variables['image']['image'], $class_matches);
+		preg_match('/rel="(.+?)"/', $variables['image']['image'], $rel_matches);
+    $variables['url'] = $url_matches[1];
+    $variables['class'] = $class_matches[1];
+    $variables['rel'] = $rel_matches[1];
 }
 
 function pcsa_views_pre_render(&$view) {

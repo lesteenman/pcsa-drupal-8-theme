@@ -16,6 +16,16 @@
 	height: 195px;
 	margin: 20px;
 
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.flickr-wrap-image {
+  width: 150px;
+  height: 150px;
+
+	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
