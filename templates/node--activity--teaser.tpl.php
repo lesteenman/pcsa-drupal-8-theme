@@ -80,7 +80,7 @@
  * @ingroup themeable
  */
 ?>
-<tr id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix bnode"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix bnode"<?php print $attributes; ?>>
 
   <?php print $user_picture; ?>
 
@@ -123,4 +123,4 @@
   <?php endif; ?>
 
   <?php print render($content['comments']); ?>
-</tr>
+</div>
