@@ -61,13 +61,8 @@
 ?>
 
 <?php
-/* dpm($content, 'content'); */
-/* dpm($comment, 'comment'); */
-/* dpm($created, 'created'); */
-$user = user_load($comment->u_uid);
-/* dpm($user, 'author'); */
-/* dpm($user->field_picture[LANGUAGE_NONE][0]['uri'], 'image'); */
-/* dpm(file_create_url($user->field_picture[LANGUAGE_NONE][0]['uri']), 'image uri'); */
+// The first is used in normal comment view, the second in comment reply preview.
+$user = user_load($comment->u_uid ?? $comment->uid);
 ?>
 
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
