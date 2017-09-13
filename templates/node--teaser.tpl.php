@@ -79,48 +79,95 @@
  *
  * @ingroup themeable
  */
+dpm($variables);
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix bnode"<?php print $attributes; ?>>
+
+<?php
+$title_type = "";
+if ($user->uid) {
+    switch ($type) {
+      case 'activity':
+        $title_type = "Activiteit: ";
+        break;
+      case 'article':
+        $title_type = "Nieuws: ";
+        break;
+      case 'poll':
+        $title_type = "Poll: ";
+        break;
+      case 'forum':
+        $title_type = "Forum: ";
+        break;
+    }
+}
+?>
+
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php print $user_picture; ?>
 
-  <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+  <?php print render($title_prefix); ?>
+  <?php if (!$page): ?>
+    <h2<?php print $title_attributes; ?>>
+      <a href="<?php print $node_url; ?>">
+        <?=$title_type?>
+        <?=$title?>
+      </a>
+    </h2>
+  <?php endif; ?>
+  <?php print render($title_suffix); ?>
+
+  <?php if ($display_submitted): ?>
+    <div class="submitted">
+      <?php print $submitted; ?>
+    </div>
+  <?php endif; ?>
+
+  <div class="content"<?php print $content_attributes; ?>>
+    <?php
+      print render($content['body']);
+    ?>
+  </div>
 
 	<?php
-		$location_heer = render($content['field_location_user']);
-		$location_addr_data = field_view_field('node', $node, 'field_activity_location', ['label' => 'hidden']);
-		$location_addr = render($location_addr_data);
-		if ($location_heer) {
-			print $location_heer;
-		}
-		else if ($location_addr) {
-			print '<b>Adres: </b>' . $location_addr;
-		}
-		else {
-    	print 'Locatie onbekend';
-		}
+    if ($type === 'activity') {
+      $location_heer = render($content['field_location_user']);
+      $location_addr_data = field_view_field('node', $node, 'field_activity_location', ['label' => 'hidden']);
+      $location_addr = render($location_addr_data);
+      if ($location_heer) {
+        print $location_heer;
+      }
+      else if ($location_addr) {
+        print '<b>Adres: </b>' . $location_addr;
+      }
+      else {
+        print 'Locatie onbekend';
+      }
+    }
 	?>
-	<br />
 
-  <?php print render($content['field_date']); ?>
+  <?php if ($type === 'activity'):?>
 
-  <?php
+    <div style="display: flex;"><div style='margin-right: 5px; font-weight: bold;'>Datum: </div> <?=render($content['field_date'])?></div>
+
+    <?php
     $startDate = strtotime($content['field_date']['#items'][0]['value']);
 	  $endDate = strtotime($content['field_date']['#items'][0]['value2']);
-  ?>
+    ?>
 
-  <?php if ($startDate >= time()): ?>
-    <div class="activity-set-attendance">
-    <span style="margin-right: 12px;"><?php print flag_create_link('presence_present', $node->nid);?></span>
-    <?php print flag_create_link('presence_not_present', $node->nid);?>
-    </div>
+    <?php if ($startDate >= time()):?>
+      <div class="activity-set-attendance">
+        <span style="margin-right: 12px;"><?php print flag_create_link('presence_present', $node->nid);?></span>
+        <?php print flag_create_link('presence_not_present', $node->nid);?>
+      </div>
+    <?php endif;?>
   <?php endif; ?>
 
-  <?php if ($comment_count): ?>
+  <?php if ($user->uid && $comment_count): ?>
     <div class='activity-teaser-comments'>
-        <?=$comment_count?> comments
+        <a href="<?=$node_url?>#comments"><?=$comment_count?> reacties</a>
     </div>
   <?php endif; ?>
 
-  <?php print render($content['comments']); ?>
 </div>
+
