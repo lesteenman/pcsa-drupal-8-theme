@@ -186,12 +186,10 @@ ul.menu li.first {
 
 .logged-in-menu {
 	position: relative;
-	padding: 20px 0;
 	font-weight: bold;
 }
 
 .not-front .logged-in-menu {
-	padding: 5px 0;
 	font-weight: initial;
 	font-size: 105%;
 }
@@ -226,6 +224,15 @@ ul.menu li.first {
 .logged-in-menu li>a {
 	color: #ddd;
 	text-decoration: none;
+
+  line-height: 50px;
+  height: 50px;
+  display: block;
+}
+
+.not-front .logged-in-menu li>a {
+    line-height: 40px;
+    height: 40px;
 }
 
 .logged-in-menu .menu {
