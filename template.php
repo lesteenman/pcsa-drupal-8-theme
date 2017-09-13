@@ -214,8 +214,9 @@ function preprocess_flickrgallery_photo(&$variables) {
 }
 
 function pcsa_views_pre_render(&$view) {
+  global $user;
 	if ($view->name === 'new_content') {
-		if (user_access('view nodes')) {
+		if ($user->uid) {
 			$view->build_info['title'] = "Recent";
 		}
 		else {
