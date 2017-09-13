@@ -16,5 +16,5 @@
 	print drupal_render($form['actions']);
 ?>
 
-<i>Niet voor pinda's, kabouters, nijlpaarden of koeien.<i/>
+<i>Niet voor pinda's, kabouters, nijlpaarden, koeien of kliekjes.<i/>
 <!-- /user-login-custom-form -->
