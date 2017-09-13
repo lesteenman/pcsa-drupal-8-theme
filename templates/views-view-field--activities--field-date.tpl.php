@@ -27,7 +27,7 @@
 $start = strtotime($row->field_field_date[0]['raw']['value'] . ' UTC');
 $end = strtotime($row->field_field_date[0]['raw']['value2'] . ' UTC');
 
-$format1 = 'd M Y H:i';
+$format1 = 'D d M Y - H:i';
 $format2 = false;
 
 if ($start === $end) {
@@ -39,14 +39,34 @@ else if (date('Y-m-d', $start) === date('Y-m-d', $end)) {
 }
 else if (date('Y', $start) === date('Y', $end)) {
     // Tell month, day and time
-    $format2 = 'd M H:i';
+    $format2 = 'D d M - H:i';
 }
 else {
     // Full date difference
     $format2 = $format1;
 }
 
-print format_date($start, 'custom', $format1);
-if ($format2) print ' tot ' . format_date($end, 'custom', $format2);
+$replacements = [
+    'Mon' => 'Ma',
+    'Tue' => 'Di',
+    'Wed' => 'Wo',
+    'Thu' => 'Do',
+    'Fri' => 'Vr',
+    'Sat' => 'Za',
+    'Sun' => 'Zo',
+
+    'Mar' => 'Maa',
+    'May' => 'Mei',
+    'Oct' => 'Okt',
+];
+
+$date1 = format_date($start, 'custom', $format1);
+$date2 = format_date($end, 'custom', $format2);
+
+$date1 = str_replace(array_keys($replacements), array_values($replacements), $date1);
+$date2 = str_replace(array_keys($replacements), array_values($replacements), $date2);
+
+print $date1;
+if ($format2) print '<br>tot<br>' . $date2;
 
 ?>
