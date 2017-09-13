@@ -63,13 +63,16 @@
 <?php
 // The first is used in normal comment view, the second in comment reply preview.
 $user = user_load($comment->u_uid ?? $comment->uid);
+$picture = '';
+if (isset($user->field_picture[LANGUAGE_NONE]))
+  $picture = $user->field_picture[LANGUAGE_NONE][0]['uri'];
 ?>
 
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $picture ?>
 
   <div class='avatar'>
-		<img src="<?=file_create_url($user->field_picture[LANGUAGE_NONE][0]['uri']); ?>" />
+		<img src="<?=file_create_url($picture); ?>" />
 	</div>
 
 	<div class="content-author">
