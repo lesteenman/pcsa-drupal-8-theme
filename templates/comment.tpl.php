@@ -69,8 +69,6 @@ if (isset($user->field_picture[LANGUAGE_NONE]))
 ?>
 
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php print $picture ?>
-
   <div class='avatar'>
 		<img src="<?=file_create_url($picture); ?>" />
 	</div>
