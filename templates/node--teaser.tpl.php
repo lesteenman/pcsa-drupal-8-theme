@@ -79,7 +79,6 @@
  *
  * @ingroup themeable
  */
-dpm($variables);
 ?>
 
 <?php

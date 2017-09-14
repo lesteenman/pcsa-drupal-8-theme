@@ -70,7 +70,7 @@
 		background: #eee;
 	}
 
-	.navScroll .navbar-collapse[aria-expanded=true]{
+	.navScroll .navbar-collapse[aria-expanded=true] {
 		background: #eee;
 		border-bottom: 2px solid #ddd;
 	}
@@ -138,27 +138,37 @@
    	transition: all 0.4s ease;
 }
 
-.navScroll .nav.secondary {
+.navScroll .nav.secondary,
+.not-front .navbar .nav.secondary {
 	margin-top: 4px;
 }
 
-.navScroll {
+.navbar.navScroll, .not-front .navbar {
 	background-color: #eee;
 	height: 60px;
 	padding: 5px 0;
 	border-color: #ccc;
 }
 
-.navScroll a.navbar-brand, .navScroll a.navbar-brand:hover, .navScroll a.navbar-brand:visited{
+.navScroll a.navbar-brand,
+.navScroll a.navbar-brand:hover,
+.navScroll a.navbar-brand:visited,
+.not-front .navbar a.navbar-brand,
+.not-front .navbar a.navbar-brand:hover,
+.not-front .navbar a.navbar-brand:visited {
 	font-size: 18px;
 	text-shadow: none;
 }
 
-.navScroll .nav li a, .navScroll .nav li a:visited{
+.navScroll .nav li a,
+.navScroll .nav li a:visited,
+.not-front .navbar .nav li a,
+.not-front .navbar .nav li a:visited {
 	color: #444;
 }
 
-.navScroll .nav li a:hover{
+.navScroll .nav li a:hover,
+.not-front .navbar .nav li a:hover {
 	color: #b92525!important;
 }
 
@@ -190,6 +200,11 @@ ul.menu li.first {
 }
 
 .not-front .logged-in-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
 	font-weight: initial;
 	font-size: 105%;
 }
