@@ -128,15 +128,17 @@ function redirect_after_password_reset($form, &$form_state) {
 function pcsa_form_activity_node_form_alter(&$form, &$form_state, $form_id) {
   $form['#submit'][] = 'node_activity_submit_handler';
 
-  $addr = $form_state['values']['field_activity_location'][LANGUAGE_NONE][0];
+  if (isset($form_state['values'])) {
+    $addr = $form_state['values']['field_activity_location'][LANGUAGE_NONE][0];
 
-  $noLocation = true;
-  foreach ($addr as $key => $value) {
-      if ($value) $noLocation = false;
-  }
+    $noLocation = true;
+    foreach ($addr as $key => $value) {
+        if ($value) $noLocation = false;
+    }
 
-  if ($noLocation) {
-    $form_state['values']['field_activity_location'][LANGUAGE_NONE][0]['country'] = 'NL';
+    if ($noLocation) {
+        $form_state['values']['field_activity_location'][LANGUAGE_NONE][0]['country'] = 'NL';
+    }
   }
 }
 
