@@ -95,6 +95,7 @@ function pcsa_form_alter(&$form, &$form_state, $form_id) {
 		$form['name']['#attributes']['placeholder'] = t('Gebruikersnaam of email');
 	else if ($form_id === 'user_pass')
 		$form['name']['#attributes']['placeholder'] = t('Gebruikersnaam of email');
+
 	$form['pass']['#attributes']['placeholder'] = t( 'Wachtwoord' );
 	$form['name']['#title_display'] = "invisible";
 	$form['pass']['#title_display'] = "invisible";
@@ -122,6 +123,40 @@ function pcsa_form_alter(&$form, &$form_state, $form_id) {
 function redirect_after_password_reset($form, &$form_state) {
 	global $user;
 	$form_state['redirect'] = "/user/{$user->uid}/edit";
+}
+
+function pcsa_form_activity_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['#submit'][] = 'node_activity_submit_handler';
+
+  $addr = $form_state['values']['field_activity_location'][LANGUAGE_NONE][0];
+
+  $noLocation = true;
+  foreach ($addr as $key => $value) {
+      if ($value) $noLocation = false;
+  }
+
+  if ($noLocation) {
+    $form_state['values']['field_activity_location'][LANGUAGE_NONE][0]['country'] = 'NL';
+  }
+}
+
+/**
+ * Clear the country code from an activity address if it's the only set value.
+ * This way, we can have NL as default when creating an activity, so that just
+ * the thoroughfare can be set, without having to set it manually, and without
+ * just a country showing up in location rendering.
+ */
+function node_activity_submit_handler($form, &$form_state) {
+  $addr = $form_state['values']['field_activity_location'][LANGUAGE_NONE][0];
+
+  $noLocation = true;
+  foreach ($addr as $key => $value) {
+      if ($value && $key !== 'country') $noLocation = false;
+  }
+
+  if ($noLocation) {
+    $form_state['values']['field_activity_location'][LANGUAGE_NONE][0]['country'] = '';
+  }
 }
 
 function pcsa_form_user_login_alter(&$form, &$form_state) {
