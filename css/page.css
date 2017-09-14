@@ -11,7 +11,9 @@
 	left: 0px;
 }
 
-a.navbar-brand, a.navbar-brand:hover, a.navbar-brand:visited{
+.navbar a.navbar-brand,
+.navbar a.navbar-brand:hover,
+.navbar a.navbar-brand:visited {
 	font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
 	color: #b92525;
 	font-size: 24px;
