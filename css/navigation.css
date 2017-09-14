@@ -194,6 +194,10 @@ ul.menu li.first {
 	font-size: 105%;
 }
 
+.front .logged-in-menu .container {
+  text-align: left;
+}
+
 .logged-in-menu .container {
 	max-width: 970px;
 	text-align: right;
@@ -204,9 +208,9 @@ ul.menu li.first {
 }
 
 /* Reverse padding (right to left) of something in bootstrap/system.menus.css */
-.logged-in-menu li.expanded,
-	.logged-in-menu li.collapsed,
-	.logged-in-menu li.leaf {
+.not-front .logged-in-menu li.expanded,
+	.not-front .logged-in-menu li.collapsed,
+	.not-front .logged-in-menu li.leaf {
 	padding: 0.2em 0 0 0.5em;
 }
 
