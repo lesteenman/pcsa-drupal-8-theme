@@ -1,5 +1,15 @@
 body {
-	text-align: justify;
+	text 
+	position: relative;
+	background: #111;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1.45;-align: justify;
+  overflow-y: scroll;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
 }
 
 label > * {
@@ -81,18 +91,6 @@ label > * {
   .not-front #main-wrapper {
     padding-top: 70px;
   }
-}
-
-html, body {
-	margin: 0;
-	padding: 0;
-}
-
-body { 
-	position: relative;
-	background: #111;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	line-height: 1.45;
 }
 
 .secondaryNew li{
