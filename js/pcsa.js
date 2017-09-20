@@ -49,6 +49,10 @@ jQuery(document).ready(function(){
 		jQuery('.navbar').addClass('navbar-relative');
 	}
 
+  if (jQuery(window).scrollTop() > offset) {
+    jQuery(".navbar").addClass("navScroll");
+  }
+
 	//Hide/show login form
 	// jQuery("#loginlink").click(function(){
 		// jQuery('#login').toggle("fast");

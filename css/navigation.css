@@ -150,9 +150,9 @@
 	border-color: #ccc;
 }
 
-.navScroll a.navbar-brand,
-.navScroll a.navbar-brand:hover,
-.navScroll a.navbar-brand:visited,
+.navbar.navScroll a.navbar-brand,
+.navbar.navScroll a.navbar-brand:hover,
+.navbar.navScroll a.navbar-brand:visited,
 .not-front .navbar a.navbar-brand,
 .not-front .navbar a.navbar-brand:hover,
 .not-front .navbar a.navbar-brand:visited {
