@@ -12,6 +12,7 @@ stylesheets[all][] = css/heer.css
 stylesheets[all][] = css/page.css
 stylesheets[all][] = css/comments.css
 stylesheets[all][] = css/activities.css
+stylesheets[all][] = css/forum.css
 
 scripts[] = js/scripts.js
 scripts[] = js/pcsa.js
