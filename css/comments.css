@@ -21,10 +21,14 @@
     min-width: 75px;
 }
 
-.comment .avatar img {
+.comment .avatar > div {
     display: block;
     margin: 0 auto;
     height: 75px;
+    width: 75px;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
 }
 
 .comment .content-author {

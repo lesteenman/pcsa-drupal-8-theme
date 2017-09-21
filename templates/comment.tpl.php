@@ -70,7 +70,7 @@ if (isset($user->field_picture[LANGUAGE_NONE]))
 
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class='avatar'>
-		<img src="<?=file_create_url($picture); ?>" />
+    <div style='background-image: url(<?=file_create_url($picture)?>)'></div>
 	</div>
 
 	<div class="content-author">
