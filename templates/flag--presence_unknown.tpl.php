@@ -49,7 +49,7 @@
  */
 ?>
 <?php if ($status == 'flagged'): ?>
-  <b>Aanwezig</b>
+  <b>Onzeker</b>
 <?php else: ?>
-	<a href="<?php print $link_href; ?>" title="Zet op aanwezig" class="" rel="nofollow">Aanwezig</a>
+  <a href="<?php print $link_href; ?>" title="Zet op onzeker" class="" rel="nofollow">Onzeker</a>
 <?php endif; ?>

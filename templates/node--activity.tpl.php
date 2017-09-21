@@ -131,6 +131,7 @@
     <div class="activity-set-attendance">
       <h4>Uw Aanwezigheid:</h4>
     <span style="margin-right: 12px;"><?php print flag_create_link('presence_present', $node->nid);?></span>
+    <span style="margin-right: 12px;"><?php print flag_create_link('presence_unknown', $node->nid);?></span>
     <?php print flag_create_link('presence_not_present', $node->nid);?>
     </div>
   <?php endif; ?>

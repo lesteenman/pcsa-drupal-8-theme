@@ -152,13 +152,20 @@ if ($user->uid) {
     <?php
     $startDate = strtotime($content['field_date']['#items'][0]['value']);
 	  $endDate = strtotime($content['field_date']['#items'][0]['value2']);
+    $is_unknown = isset(flag_get_user_flags('node', $node->nid, $user->uid)['presence_unknown']);
     ?>
 
     <?php if ($startDate >= time()):?>
       <div class="activity-set-attendance">
         <span style="margin-right: 12px;"><?php print flag_create_link('presence_present', $node->nid);?></span>
+        <?php if (!$is_unknown): ?>
+          <span style="margin-right: 12px;"><?php print flag_create_link('presence_unknown', $node->nid);?></span>
+        <?php endif; ?>
         <?php print flag_create_link('presence_not_present', $node->nid);?>
       </div>
+      <?php if ($is_unknown): ?>
+      <b>Let op:</b> omdat deze activiteit over minder dan 48 uur plaats vindt, is 'onzeker' niet meer toegestaan.
+      <?php endif; ?>
     <?php endif;?>
   <?php endif; ?>
 

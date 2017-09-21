@@ -49,7 +49,6 @@
  */
 ?>
 <?php if ($status == 'flagged'): ?>
-  <a href="<?php print $link_href; ?>" title="Zet op onbekend" class="" rel="nofollow">Onbekend</a>
   <b>Afwezig</b>
 <?php else: ?>
   <a href="<?php print $link_href; ?>" title="Zet op afwezig" class="" rel="nofollow">Afwezig</a>

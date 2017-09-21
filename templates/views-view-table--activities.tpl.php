@@ -21,20 +21,13 @@
 ?>
 
 <script language='javascript'>
-activity_set_presence = function(selector, original, present, absent) {
+activity_set_presence = function(selector, original, present, absent, unknown) {
+  if (selector.value == '') return;
+
   var url;
-  if (original == 'present') {
-    if (selector.value == 'unknown') url = present;
-    else url = absent;
-  }
-  else if (original == 'absent') {
-    if (selector.value == 'unknown') url = absent;
-    else url = present;
-  }
-  else {
-    if (selector.value == 'present') url = present;
-    else url = absent;
-  }
+  if (selector.value == 'present') url = present;
+  else if (selector.value == 'absent') url = absent;
+  else if (selector.value == 'unknown') url = unknown;
   window.location = url;
 }
 </script>
@@ -72,17 +65,24 @@ activity_set_presence = function(selector, original, present, absent) {
         <?php if ($view->current_display === 'activities_upcoming'): ?>
 
           <?php
+            /* dpm($row, 'row'); */
             preg_match('/href="(.+?)"/', $row['ops'], $present_match);
             preg_match('/href="(.+?)"/', $row['ops_1'], $absent_match);
+            preg_match('/href="(.+?)"/', $row['ops_2'], $unknown_match);
             $flag_present = $present_match[1];
             $flag_absent = $absent_match[1];
+            $flag_unknown = $unknown_match[1];
 
-            $value = $row['flagged'] ? 'present' : ($row['flagged_1'] ? 'absent' : 'unknown');
+            $value = '';
+            if ($row['flagged']) $value = 'present';
+            else if ($row['flagged_1']) $value = 'absent';
+            else if ($row['flagged_2']) $value = 'unknown';
           ?>
 
           <!-- Presence -->
           <td class='column-presence'>
-            <select id="activity-presence-<?=$row_count?>" onchange="activity_set_presence(this, '<?=$value?>', '<?=$flag_present?>', '<?=$flag_absent?>');">
+            <select id="activity-presence-<?=$row_count?>" onchange="activity_set_presence(this, '<?=$value?>', '<?=$flag_present?>', '<?=$flag_absent?>', '<?=$flag_unknown?>');">
+              <?php if ($value === ''): ?><option value="" selected></option><?php endif; ?>
               <option value="present" <?= $value == 'present' ? 'selected' : ''?>>Ja</option>
               <option value="absent"= <?= $value == 'absent' ? 'selected' : ''?>>Nee</option>
               <option value="unknown"= <?= $value == 'unknown' ? 'selected' : ''?>>Onbekend</option>
