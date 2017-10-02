@@ -32,7 +32,8 @@ jQuery(document).ready(function(){
 	if (location.pathname == Drupal.settings.basePath || location.pathname == '/home') {
 		//Change nav on scroll
 		jQuery(window).scroll(function() { 
-			scroll_start = jQuery('body').scrollTop();
+			scroll_start = document.body.scrollTop;
+      if (!scroll_start) scroll_start = document.documentElement.scrollTop;
 
 			if(scroll_start > offset) {
 				jQuery(".navbar").addClass("navScroll");

@@ -163,7 +163,7 @@ if ($user->uid) {
         <?php endif; ?>
         <?php print flag_create_link('presence_not_present', $node->nid);?>
       </div>
-      <?php if ($is_unknown): ?>
+      <?php if ($startDate < time() + 86400 * 2): ?>
       <b>Let op:</b> omdat deze activiteit over minder dan 48 uur plaats vindt, is 'onzeker' niet meer toegestaan.
       <?php endif; ?>
     <?php endif;?>
