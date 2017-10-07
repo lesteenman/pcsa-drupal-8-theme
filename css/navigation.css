@@ -249,6 +249,11 @@ ul.menu li.first {
   display: block;
 }
 
+.logged-in-menu li>a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 .not-front .logged-in-menu li>a {
     line-height: 40px;
     height: 40px;
