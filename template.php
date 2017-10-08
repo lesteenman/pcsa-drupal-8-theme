@@ -53,9 +53,44 @@ function pcsa_preprocess_page(&$variables) {
 	}
 }
 
+function getUnreadData($node) {
+  global $user;
+
+  if ($user->uid) {
+    // Retrieve the timestamp at which the current user last viewed the
+    // specified node.
+    if (!$lastVisit) {
+      $lastVisit = node_last_viewed($node['nid']);
+    }
+
+    // Use the lastVisit to retrieve the number of new comments.
+    $result = db_query('SELECT COUNT(c.cid) FROM {node} n INNER JOIN {comment} c ON n.nid = c.nid WHERE n.nid = :nid AND c.created > :lastVisit AND c.status = :status', [
+      ':nid' => $node['nid'],
+      ':lastVisit' => $lastVisit,
+      ':status' =>  COMMENT_PUBLISHED,
+    ]);
+
+    $isNew = $node['created'] > $lastVisit;
+
+    return [
+        'comments' => $result->fetchField(),
+        'is_new' => $isNew,
+    ];
+  }
+  else {
+    return 0;
+  }
+}
+
 function pcsa_preprocess_node(&$variables) {
+  if (in_array($variables['type'], ['activity', 'article', 'forum'])) {
+    $unreadData = getUnreadData($variables);
+    $variables['new_comment_count'] = $unreadData['comments'];
+    $variables['is_new'] = $unreadData['is_new'];
+  }
+
 	// Remove 'add new comment' link from nodes.
-	if (in_array($variables['type'], ['activity', 'news'])) {
+	if (in_array($variables['type'], ['activity', 'article'])) {
 		unset($variables['elements']['links']['comment']['#links']['comment-add']);
 		unset($variables['content']['links']['comment']['#links']['comment-add']);
 	}

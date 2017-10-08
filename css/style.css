@@ -275,6 +275,13 @@ margin-top: 30px;
 	color: #666;
 }
 
+.node-teaser .submitted .new_indicator,
+.node .submitted .new_indicator {
+    display: inline;
+    font-weight: bold;
+	  color: #b92525;
+}
+
 .node-teaser .links {
 	float: right;
 	margin: -10px 0 0 0;

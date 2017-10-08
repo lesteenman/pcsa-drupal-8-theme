@@ -118,6 +118,7 @@ if ($user->uid) {
 
   <?php if ($display_submitted): ?>
     <div class="submitted">
+      <?php if ($is_new):?><div class='new_indicator'>Nieuw</div><?php endif; ?>
       <?php print $submitted; ?>
     </div>
   <?php endif; ?>
@@ -171,7 +172,8 @@ if ($user->uid) {
 
   <?php if ($user->uid && $comment_count): ?>
     <div class='activity-teaser-comments'>
-        <a href="<?=$node_url?>#comments"><?=$comment_count?> reacties</a>
+        <a href="<?=$node_url?>#comments"><?=$comment_count?> reactie<?php print $comment_count > 1 ? 's' : '' ?></a>
+        <?php if($new_comment_count ?? 0): ?>(<?=$new_comment_count?> nieuw)<?php endif?>
     </div>
   <?php endif; ?>
 
