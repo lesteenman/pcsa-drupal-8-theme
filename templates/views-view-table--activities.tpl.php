@@ -56,8 +56,14 @@ activity_set_presence = function(selector, original, present, absent, unknown) {
         <td class='column-title'><?php
           print render($row['title']);
           if ($row['comment_count']) {
-            print ' (' . $row['comment_count'];
-            // Add +new
+            print ' (';
+            $read = $row['comment_count'] - ($row['new_comment_count'] ?? 0);
+            if ($read) print $read;
+            if ($row['new_comment_count'] ?? false) {
+                print '<b>';
+                if ($read) print ' + ';
+                print $row['new_comment_count'] . '</b>';
+            }
             print ')';
           }
         ?></td>
@@ -65,13 +71,12 @@ activity_set_presence = function(selector, original, present, absent, unknown) {
         <?php if ($view->current_display === 'activities_upcoming'): ?>
 
           <?php
-            /* dpm($row, 'row'); */
             preg_match('/href="(.+?)"/', $row['ops'], $present_match);
             preg_match('/href="(.+?)"/', $row['ops_1'], $absent_match);
             preg_match('/href="(.+?)"/', $row['ops_2'], $unknown_match);
-            $flag_present = $present_match[1];
-            $flag_absent = $absent_match[1];
-            $flag_unknown = $unknown_match[1];
+            $flag_present = ($present_match[1] ?? null);
+            $flag_absent = ($absent_match[1] ?? null);
+            $flag_unknown = ($unknown_match[1] ?? null);
 
             $value = '';
             if ($row['flagged']) $value = 'present';

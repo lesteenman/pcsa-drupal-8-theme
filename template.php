@@ -202,17 +202,15 @@ function pcsa_form_user_login_alter(&$form, &$form_state) {
 	$form['pass']['#description'] = t('');
 }
 
-/* function pcsa_preprocess_views_view_table(&$vars) { */
-/*     $view_name = $vars['view']->name; */
-/*     $display_id = $vars['view']->current_display; */
-
-/*     /1* dpm(['view_name' => $view_name, 'display' => $display_id]); *1/ */
-/*     dpm($vars); */
-
-/*     if ($view_name === 'activities') { */
-/*        $vars['future_events'] = $display_id === 'activities_present'; */
-/*     } */
-/* } */
+function pcsa_preprocess_views_view_table(&$vars) {
+  if ($vars['view']->name === 'activities') {
+    foreach ($vars['rows'] as $rowNum => $row) {
+      $unreadData = getUnreadData($row);
+      $vars['rows'][$rowNum]['new_comment_count'] = $unreadData['comments'];
+      $vars['rows'][$rowNum]['is_new'] = $unreadData['is_new'];
+    }
+  }
+}
 
 function pcsa_theme() {
 	$path = drupal_get_path('theme', 'pcsa') . '/templates';
