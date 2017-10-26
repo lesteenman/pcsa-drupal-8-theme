@@ -1,9 +1,9 @@
 body {
-	text 
 	position: relative;
 	background: #111;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	line-height: 1.45;-align: justify;
+	line-height: 1.45;
+  text-align: justify;
   overflow-y: scroll;
 }
 

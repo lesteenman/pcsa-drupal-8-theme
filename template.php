@@ -59,9 +59,7 @@ function getUnreadData($node) {
   if ($user->uid) {
     // Retrieve the timestamp at which the current user last viewed the
     // specified node.
-    if (!$lastVisit) {
-      $lastVisit = node_last_viewed($node['nid']);
-    }
+    $lastVisit = node_last_viewed($node['nid']);
 
     // Use the lastVisit to retrieve the number of new comments.
     $result = db_query('SELECT COUNT(c.cid) FROM {node} n INNER JOIN {comment} c ON n.nid = c.nid WHERE n.nid = :nid AND c.created > :lastVisit AND c.status = :status', [
