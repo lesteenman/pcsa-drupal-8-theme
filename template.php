@@ -107,7 +107,9 @@ function pcsa_preprocess_node(&$variables) {
 		}
 	}
 
-  $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
+  if (!in_array($variables['type'], ['flickr_albums_album', 'flickr_albums_photo'])) {
+      $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
+  }
   /* $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode']; */
 }
 
