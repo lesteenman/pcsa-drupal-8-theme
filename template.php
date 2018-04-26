@@ -68,11 +68,9 @@ function getUnreadData($node) {
       ':status' =>  COMMENT_PUBLISHED,
     ]);
 
-    $isNew = $node['created'] > $lastVisit;
-
     return [
         'comments' => $result->fetchField(),
-        'is_new' => $isNew,
+        'is_new' => isset($node['created']) ? $node['created'] > $lastVisit : false,
     ];
   }
   else {
