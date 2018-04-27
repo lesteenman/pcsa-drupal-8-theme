@@ -21,7 +21,7 @@
     ],
     "require": {
         "composer/installers": "^1.2",
-        "drupal/core": "7.*"
+        "drupal/drupal": "7.*"
     },
     "require-dev": {},
     "conflict": {},
