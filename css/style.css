@@ -375,3 +375,7 @@ input {
 #footer {
 	overflow: hidden;
 }
+
+blockquote {
+  font-size: 16px;
+}
