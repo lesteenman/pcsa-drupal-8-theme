@@ -24,6 +24,18 @@ label > * {
 	display: none;
 }
 
+.node .field-name-field-image {
+  float: right;
+  margin: 0 0 30px 30px;
+  max-width: 60%;
+}
+
+.node .field-name-field-image img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
 .content > .container {
 	margin-left: 0;
 	margin-right: 0;
@@ -85,6 +97,19 @@ label > * {
 	#praesidiumlist li img {
 		width: 100px!important;
 	}
+
+  .node .field-name-field-image {
+    float: none;
+    display: block;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .node .field-name-field-image img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media all and (min-width: 768px) { /* nav = complete */
