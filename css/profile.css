@@ -1,0 +1,111 @@
+fieldset legend {
+  line-height: 22px;
+}
+
+.form-wrapper {
+  margin-bottom: 40px;
+}
+
+#user-profile-form #edit-locale {
+  display: none;
+}
+
+.draggable a.tabledrag-handle {
+  height: unset;
+  margin-left: unset;
+}
+
+table.field-multiple-table tr {
+  background: none;
+}
+
+table.field-multiple-table tr.draggable {
+  border: none;
+}
+
+table.field-multiple-table tr.draggable td {
+  padding: 10px 0;
+}
+
+table.field-multiple-table tr.draggable:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+table.field-multiple-table th, table.field-multiple-table tbody {
+  border: none;
+}
+
+form .field-multiple-table td.field-multiple-drag {
+  width: 24px;
+}
+
+.draggable a.tabledrag-handle .handle {
+  margin: unset;
+  padding: unset;
+  width: 24px;
+  height: 24px;
+}
+
+form .field-multiple-table td.field-multiple-drag a.tabledrag-handle {
+  padding-right: 10px;
+}
+
+form .field-multiple-table legend {
+  font-size: 17px;
+}
+
+.tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+
+.draggable a.tabledrag-handle .handle {
+  background-position-x: 5px;
+  background-position-y: 5px;
+}
+
+.form-item label {
+  margin-bottom: 0;
+  font-weight: normal;
+  color: #333;
+  display: block;
+  font-size: 18px;
+}
+
+form fieldset .form-item label {
+  font-size: 14px;
+}
+
+.form-item label.option {
+  display: inline-block;
+}
+
+fieldset {
+  border: solid 1px #ddd;
+  border-radius: 4px;
+}
+
+fieldset legend {
+  width: auto;
+  margin-bottom: 0;
+  margin-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: none;
+}
+
+fieldset.date-combo .container-inline-date .date-padding {
+  padding: 0;
+}
+
+fieldset .fieldset-wrapper {
+  padding: 10px 20px;
+}
+
+.form-item input[type="text"], .form-item input[type="password"] {
+  border: 1px solid #aaa;
+  width: 450px;
+}
+
+tr.draggable .form-item input[type="text"], tr.draggable .form-item input[type="password"] {
+  width: 426px; /* Subtract width of the drag element to the left */
+}
