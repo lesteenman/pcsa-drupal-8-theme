@@ -109,7 +109,7 @@
       </nav>
     <?php endif; ?> <!-- $main_menu, $secondary_menu -->
 
-<div id="page-wrapper" class="<?php if ($is_admin): ?>admin-user<?php endif ?>">
+<div id="page-wrapper" class="pcsa-site <?php if ($is_admin): ?>admin-user<?php endif ?>">
   <div id="page">
 
     <?php if (drupal_is_front_page()): ?>

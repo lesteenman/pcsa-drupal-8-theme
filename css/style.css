@@ -397,6 +397,29 @@ input {
 	padding: 3px 5px;
 }
 
+input[type="submit"] {
+  color: white;
+  border-radius: 4px;
+  background: #b92525;
+  text-align: center;
+  border: none;
+  box-shadow: rgba(0,0,0,0.2) 0 2px 2px;
+  transition: box-shadow 50ms ease-in-out;
+  text-transform: uppercase;
+  padding: 4px 19px;
+  margin-right: 15px;
+}
+
+input[type="submit"]:hover {
+  box-shadow: rgba(0,0,0,0.2) 0 3px 3px;
+  background: #d12929;
+}
+
+input[type="submit"]:active {
+  box-shadow: rgba(0,0,0,0.2) 0 1px 1px;
+  background: #d12929;
+}
+
 #footer {
 	overflow: hidden;
 }
