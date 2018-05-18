@@ -114,6 +114,8 @@ function pcsa_preprocess_node(&$variables) {
 function pcsa_form_comment_form_alter(&$form, &$form_state) {
 	$form['author']['#access'] = false;
 
+  $form['actions']['submit']['#value'] = "Plaatsen";
+
 	if ($form['node_type']['#value'] === 'comment_node_poll') {
 		$form['subject']['#title'] = 'Onderwerp';
 		return;

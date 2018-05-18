@@ -47,7 +47,7 @@
 
   <?php if ($content['comment_form']): ?>
 	  <div id='newcomment'>
-	    <h3 class="title comment-form"><?php print t('Nieuwe reactie'); ?></h3>
+	    <h3 class="title"><?php print t('Nieuwe reactie'); ?></h3>
 	    <?php print render($content['comment_form']); ?>
     </div>
   <?php endif; ?>

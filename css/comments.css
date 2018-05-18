@@ -64,3 +64,19 @@
 #newcomment h3 {
     font-size: 18px;
 }
+
+.comment-form #comment-body-add-more-wrapper label {
+  display: none;
+}
+
+.comment-form fieldset.filter-wrapper {
+  display: none;
+}
+
+.comment-form input[type="submit"] {
+  margin-right: 15px;
+}
+
+.comment-form h3 {
+  font-weight: bold;
+}

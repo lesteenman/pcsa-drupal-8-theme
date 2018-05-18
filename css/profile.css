@@ -2,7 +2,7 @@ fieldset legend {
   line-height: 22px;
 }
 
-.form-wrapper {
+#user-profile-form .form-wrapper {
   margin-bottom: 40px;
 }
 
