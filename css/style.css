@@ -7,6 +7,12 @@ body {
   overflow-y: scroll;
 }
 
+body.maintenance-page {
+  background: #b92525;
+  color: white;
+  padding: 20px;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -150,11 +156,22 @@ section {
 	overflow:auto;
 }
 
+.maintenance-page #header #site-name a {
+  color: white;
+  text-decoration: none;
+}
+
 #header {
 	position: relative;
 	margin-top: -60px;
 	height: 650px;
 	overflow: hidden;
+}
+
+.maintenance-page #header {
+  margin-top: 0;
+  height: auto;
+  overflow: auto;
 }
 
 #header .container {
