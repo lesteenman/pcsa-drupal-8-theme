@@ -14,6 +14,10 @@
 	display: none;
 }
 
+#edit-field-full-name-value-wrapper {
+    max-width: 100%;
+}
+
 /* Hide the heeren list on small screens when someone is selected */
 @media all and (max-width: 768px) {
 	.heer-info {
